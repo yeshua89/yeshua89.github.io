@@ -1,0 +1,303 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Jesús Datica - Backend Developer">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-[#1a1b26]/90 backdrop-blur-sm border-b border-[#7aa2f7]/10 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent hover:from-[#bb9af7] hover:to-[#eb6f92] transition-all">
+          JD
+        </a>
+        <div class="flex items-center gap-6">
+          <div class="hidden md:flex gap-6">
+            <a href="#about" class="text-[#c0caf5] hover:text-[#7aa2f7] transition nav-link" data-en="About" data-es="Sobre Mí">About</a>
+            <a href="#skills" class="text-[#c0caf5] hover:text-[#7aa2f7] transition nav-link" data-en="Skills" data-es="Habilidades">Skills</a>
+            <a href="#projects" class="text-[#c0caf5] hover:text-[#7aa2f7] transition nav-link" data-en="Projects" data-es="Proyectos">Projects</a>
+            <a href="#contact" class="text-[#c0caf5] hover:text-[#7aa2f7] transition nav-link" data-en="Contact" data-es="Contacto">Contact</a>
+          </div>
+          <!-- Language Switcher -->
+          <button id="lang-toggle" class="px-3 py-1 rounded border border-[#7aa2f7]/30 text-[#7aa2f7] hover:bg-[#7aa2f7]/10 transition text-sm font-semibold">
+            ES
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section id="hero" class="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-[#1a1b26] via-[#24283b] to-[#1f1d2e] overflow-hidden">
+      <!-- Logo Background -->
+      <div class="absolute inset-0 flex items-center justify-center opacity-15">
+        <img src="/logo.png" alt="Background Logo" class="w-full max-w-3xl h-auto object-contain" />
+      </div>
+
+      <!-- Content -->
+      <div class="relative text-center px-4 z-10">
+        <h1 class="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-[#7aa2f7] via-[#bb9af7] to-[#eb6f92] bg-clip-text text-transparent">
+          <span data-en="Hi! I'm" data-es="¡Hola! Soy" class="text-4xl md:text-5xl block mb-4">Hi! I'm</span>
+          <span class="block">Jesús Datica</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-[#c0caf5] mb-8">
+          Backend Developer
+        </p>
+        <p class="text-lg text-[#9699a3] max-w-2xl mx-auto" data-en="Specialized in building robust and scalable APIs" data-es="Especializado en crear APIs robustas y escalables">
+          Specialized in building robust and scalable APIs
+        </p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-gradient-to-br from-[#24283b] to-[#1f1d2e]">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="About Me" data-es="Sobre Mí">
+          About Me
+        </h2>
+        <div class="space-y-6 text-lg text-[#c0caf5] leading-relaxed">
+          <p data-en="I'm a backend developer passionate about creating scalable and efficient solutions. I specialize in designing and implementing robust systems that can handle high-performance demands while maintaining code quality and best practices." data-es="Soy un desarrollador backend apasionado por crear soluciones escalables y eficientes. Me especializo en diseñar e implementar sistemas robustos que pueden manejar demandas de alto rendimiento mientras mantengo la calidad del código y las mejores prácticas.">
+            I'm a backend developer passionate about creating scalable and efficient solutions. I specialize in designing and implementing robust systems that can handle high-performance demands while maintaining code quality and best practices.
+          </p>
+          <p data-en="My expertise includes RESTful API design, database optimization, microservices architecture, and event-driven systems. I have hands-on experience with technologies like Node.js, Python, Go, PostgreSQL, MongoDB, Redis, and message brokers such as Kafka and NATS." data-es="Mi experiencia incluye diseño de APIs RESTful, optimización de bases de datos, arquitectura de microservicios y sistemas basados en eventos. Tengo experiencia práctica con tecnologías como Node.js, Python, Go, PostgreSQL, MongoDB, Redis y message brokers como Kafka y NATS.">
+            My expertise includes RESTful API design, database optimization, microservices architecture, and event-driven systems. I have hands-on experience with technologies like Node.js, Python, Go, PostgreSQL, MongoDB, Redis, and message brokers such as Kafka and NATS.
+          </p>
+          <p data-en="I'm constantly learning and exploring new technologies to stay at the forefront of backend development. I believe in writing clean, maintainable code and building systems that are not only functional but also scalable and resilient." data-es="Estoy constantemente aprendiendo y explorando nuevas tecnologías para mantenerme a la vanguardia del desarrollo backend. Creo en escribir código limpio y mantenible, y en construir sistemas que no solo sean funcionales, sino también escalables y resilientes.">
+            I'm constantly learning and exploring new technologies to stay at the forefront of backend development. I believe in writing clean, maintainable code and building systems that are not only functional but also scalable and resilient.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 bg-gradient-to-br from-[#1a1b26] to-[#24283b]">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="Skills" data-es="Habilidades">
+          Skills
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="bg-gradient-to-br from-[#24283b] to-[#1f1d2e] p-6 rounded-lg text-center hover:from-[#2a2f4a] hover:to-[#251f35] transition border border-[#7aa2f7]/20 hover:border-[#7aa2f7]/50">
+            <h3 class="text-xl font-semibold text-[#7aa2f7]">Node.js</h3>
+          </div>
+          <div class="bg-gradient-to-br from-[#24283b] to-[#1f1d2e] p-6 rounded-lg text-center hover:from-[#2a2f4a] hover:to-[#251f35] transition border border-[#9ece6a]/20 hover:border-[#9ece6a]/50">
+            <h3 class="text-xl font-semibold text-[#9ece6a]">Python</h3>
+          </div>
+          <div class="bg-gradient-to-br from-[#24283b] to-[#1f1d2e] p-6 rounded-lg text-center hover:from-[#2a2f4a] hover:to-[#251f35] transition border border-[#e0af68]/20 hover:border-[#e0af68]/50">
+            <h3 class="text-xl font-semibold text-[#e0af68]">JavaScript</h3>
+          </div>
+          <div class="bg-gradient-to-br from-[#24283b] to-[#1f1d2e] p-6 rounded-lg text-center hover:from-[#2a2f4a] hover:to-[#251f35] transition border border-[#bb9af7]/20 hover:border-[#bb9af7]/50">
+            <h3 class="text-xl font-semibold text-[#bb9af7]">PostgreSQL</h3>
+          </div>
+          <div class="bg-gradient-to-br from-[#24283b] to-[#1f1d2e] p-6 rounded-lg text-center hover:from-[#2a2f4a] hover:to-[#251f35] transition border border-[#f7768e]/20 hover:border-[#f7768e]/50">
+            <h3 class="text-xl font-semibold text-[#f7768e]">MongoDB</h3>
+          </div>
+          <div class="bg-gradient-to-br from-[#24283b] to-[#1f1d2e] p-6 rounded-lg text-center hover:from-[#2a2f4a] hover:to-[#251f35] transition border border-[#2ac3de]/20 hover:border-[#2ac3de]/50">
+            <h3 class="text-xl font-semibold text-[#2ac3de]">Docker</h3>
+          </div>
+          <div class="bg-gradient-to-br from-[#24283b] to-[#1f1d2e] p-6 rounded-lg text-center hover:from-[#2a2f4a] hover:to-[#251f35] transition border border-[#ff9e64]/20 hover:border-[#ff9e64]/50">
+            <h3 class="text-xl font-semibold text-[#ff9e64]">Redis</h3>
+          </div>
+          <div class="bg-gradient-to-br from-[#24283b] to-[#1f1d2e] p-6 rounded-lg text-center hover:from-[#2a2f4a] hover:to-[#251f35] transition border border-[#eb6f92]/20 hover:border-[#eb6f92]/50">
+            <h3 class="text-xl font-semibold text-[#eb6f92]">Git</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-gradient-to-br from-[#24283b] to-[#1f1d2e]">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="Projects" data-es="Proyectos">
+          Projects
+        </h2>
+
+        <!-- AI & Innovation Category -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 text-[#bb9af7]" data-en="AI & Innovation" data-es="IA e Innovación">AI & Innovation</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- GhostWriter -->
+            <div class="bg-gradient-to-br from-[#1a1b26] to-[#24283b] p-6 rounded-lg hover:shadow-2xl hover:shadow-[#bb9af7]/20 transition border border-[#bb9af7]/20 hover:border-[#bb9af7]/50 md:col-span-2">
+              <h3 class="text-2xl font-bold mb-3 text-[#bb9af7]" data-en="GhostWriter – AI Code Clone & Auto-Committer" data-es="GhostWriter – Clon de Código IA y Auto-Commits">GhostWriter – AI Code Clone & Auto-Committer</h3>
+              <p class="text-[#c0caf5] mb-4" data-en="Personalized AI coding assistant trained exclusively on your commit history (10k+ lines) using CodeLlama 34B + LoRA fine-tuning. Generates code diffs in your exact style: variable names, comments, test structure, and commit message tone. Includes automated PR creation with 97%+ confidence threshold and Telegram notifications. Fully containerized with Docker for zero local dependencies." data-es="Asistente de codificación IA personalizado entrenado exclusivamente con tu historial de commits (10k+ líneas) usando CodeLlama 34B + fine-tuning LoRA. Genera diffs de código en tu estilo exacto: nombres de variables, comentarios, estructura de tests y tono de mensajes de commit. Incluye creación automática de PRs con umbral de confianza del 97%+ y notificaciones por Telegram. Totalmente containerizado con Docker sin dependencias locales.">
+                Personalized AI coding assistant trained exclusively on your commit history (10k+ lines) using CodeLlama 34B + LoRA fine-tuning. Generates code diffs in your exact style: variable names, comments, test structure, and commit message tone. Includes automated PR creation with 97%+ confidence threshold and Telegram notifications. Fully containerized with Docker for zero local dependencies.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-[#9ece6a]/20 border border-[#9ece6a]/40 px-3 py-1 rounded text-sm text-[#9ece6a]">Python</span>
+                <span class="bg-[#bb9af7]/20 border border-[#bb9af7]/40 px-3 py-1 rounded text-sm text-[#bb9af7]">CodeLlama 34B</span>
+                <span class="bg-[#7aa2f7]/20 border border-[#7aa2f7]/40 px-3 py-1 rounded text-sm text-[#7aa2f7]">LoRA Fine-tuning</span>
+                <span class="bg-[#eb6f92]/20 border border-[#eb6f92]/40 px-3 py-1 rounded text-sm text-[#eb6f92]">Git Scraping</span>
+                <span class="bg-[#2ac3de]/20 border border-[#2ac3de]/40 px-3 py-1 rounded text-sm text-[#2ac3de]">Docker</span>
+                <span class="bg-[#e0af68]/20 border border-[#e0af68]/40 px-3 py-1 rounded text-sm text-[#e0af68]">Telegram Bot</span>
+                <span class="bg-[#f7768e]/20 border border-[#f7768e]/40 px-3 py-1 rounded text-sm text-[#f7768e]">Auto-PR Agent</span>
+              </div>
+            </div>
+
+            <!-- RepoTimeMachine -->
+            <div class="bg-gradient-to-br from-[#1a1b26] to-[#24283b] p-6 rounded-lg hover:shadow-2xl hover:shadow-[#ff9e64]/20 transition border border-[#ff9e64]/20 hover:border-[#ff9e64]/50 md:col-span-2">
+              <h3 class="text-2xl font-bold mb-3 text-[#ff9e64]" data-en="RepoTimeMachine – Time Travel for Repositories" data-es="RepoTimeMachine – Viajes en el Tiempo para Repositorios">RepoTimeMachine – Time Travel for Repositories</h3>
+              <p class="text-[#c0caf5] mb-4" data-en="Interactive terminal-based repository explorer that reconstructs commit history as a 3D movie using Kitty/Ghostty graphics protocol. Navigate through code versions like a Doom-style game (WASD controls), with an LLM narrator that reconstructs author intent from commits and diffs. Features AI-powered conversations with simulated past developers based on their commit patterns and issue history." data-es="Explorador interactivo de repositorios basado en terminal que reconstruye el historial de commits como una película en 3D usando el protocolo gráfico de Kitty/Ghostty. Navega por versiones de código como un juego estilo Doom (controles WASD), con un narrador LLM que reconstruye la intención del autor a partir de commits y diffs. Incluye conversaciones impulsadas por IA con desarrolladores del pasado simulados basados en sus patrones de commits e historial de issues.">
+                Interactive terminal-based repository explorer that reconstructs commit history as a 3D movie using Kitty/Ghostty graphics protocol. Navigate through code versions like a Doom-style game (WASD controls), with an LLM narrator that reconstructs author intent from commits and diffs. Features AI-powered conversations with simulated past developers based on their commit patterns and issue history.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-[#9ece6a]/20 border border-[#9ece6a]/40 px-3 py-1 rounded text-sm text-[#9ece6a]">Python</span>
+                <span class="bg-[#7aa2f7]/20 border border-[#7aa2f7]/40 px-3 py-1 rounded text-sm text-[#7aa2f7]">LLM/AI</span>
+                <span class="bg-[#eb6f92]/20 border border-[#eb6f92]/40 px-3 py-1 rounded text-sm text-[#eb6f92]">Git</span>
+                <span class="bg-[#2ac3de]/20 border border-[#2ac3de]/40 px-3 py-1 rounded text-sm text-[#2ac3de]">Terminal Graphics</span>
+                <span class="bg-[#bb9af7]/20 border border-[#bb9af7]/40 px-3 py-1 rounded text-sm text-[#bb9af7]">3D Rendering</span>
+                <span class="bg-[#ff9e64]/20 border border-[#ff9e64]/40 px-3 py-1 rounded text-sm text-[#ff9e64]">TTS</span>
+                <span class="bg-[#e0af68]/20 border border-[#e0af68]/40 px-3 py-1 rounded text-sm text-[#e0af68]">Kitty Protocol</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Distributed Systems & Backend Category -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 text-[#9ece6a]" data-en="Distributed Systems & Backend" data-es="Sistemas Distribuidos y Backend">Distributed Systems & Backend</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- PayFlow -->
+            <div class="bg-gradient-to-br from-[#1a1b26] to-[#24283b] p-6 rounded-lg hover:shadow-2xl hover:shadow-[#9ece6a]/20 transition border border-[#9ece6a]/20 hover:border-[#9ece6a]/50 md:col-span-2">
+              <h3 class="text-2xl font-bold mb-3 text-[#9ece6a]" data-en="PayFlow – Distributed Payment Engine" data-es="PayFlow – Motor de Pagos Distribuido">PayFlow – Distributed Payment Engine</h3>
+              <p class="text-[#c0caf5] mb-4" data-en="Distributed payment processing system with event-driven architecture. Go microservice handles high-performance webhook processing from Stripe/PayPal with async events via NATS/Kafka. Python microservice manages retries, dead-letter queues, reconciliation, and basic fraud detection. Real-time dashboard with WebSocket for transaction monitoring." data-es="Sistema de procesamiento de pagos distribuido con arquitectura event-driven. Microservicio en Go maneja webhooks de alto rendimiento desde Stripe/PayPal con eventos asíncronos vía NATS/Kafka. Microservicio en Python gestiona reintentos, colas de errores, reconciliación y detección básica de fraude. Dashboard en tiempo real con WebSocket para monitoreo de transacciones.">
+                Distributed payment processing system with event-driven architecture. Go microservice handles high-performance webhook processing from Stripe/PayPal with async events via NATS/Kafka. Python microservice manages retries, dead-letter queues, reconciliation, and basic fraud detection. Real-time dashboard with WebSocket for transaction monitoring.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-[#2ac3de]/20 border border-[#2ac3de]/40 px-3 py-1 rounded text-sm text-[#2ac3de]">Go</span>
+                <span class="bg-[#9ece6a]/20 border border-[#9ece6a]/40 px-3 py-1 rounded text-sm text-[#9ece6a]">Python</span>
+                <span class="bg-[#7aa2f7]/20 border border-[#7aa2f7]/40 px-3 py-1 rounded text-sm text-[#7aa2f7]">FastAPI</span>
+                <span class="bg-[#e0af68]/20 border border-[#e0af68]/40 px-3 py-1 rounded text-sm text-[#e0af68]">NATS/Kafka</span>
+                <span class="bg-[#bb9af7]/20 border border-[#bb9af7]/40 px-3 py-1 rounded text-sm text-[#bb9af7]">PostgreSQL</span>
+                <span class="bg-[#f7768e]/20 border border-[#f7768e]/40 px-3 py-1 rounded text-sm text-[#f7768e]">Redis</span>
+                <span class="bg-[#ff9e64]/20 border border-[#ff9e64]/40 px-3 py-1 rounded text-sm text-[#ff9e64]">Docker</span>
+                <span class="bg-[#eb6f92]/20 border border-[#eb6f92]/40 px-3 py-1 rounded text-sm text-[#eb6f92]">Grafana</span>
+              </div>
+            </div>
+
+            <!-- Authentication Microservice -->
+            <div class="bg-gradient-to-br from-[#1a1b26] to-[#24283b] p-6 rounded-lg hover:shadow-2xl hover:shadow-[#bb9af7]/20 transition border border-[#bb9af7]/20 hover:border-[#bb9af7]/50">
+              <h3 class="text-2xl font-bold mb-3 text-[#bb9af7]" data-en="Authentication Microservice" data-es="Microservicio de Autenticación">Authentication Microservice</h3>
+              <p class="text-[#c0caf5] mb-4" data-en="Authentication service with OAuth2, JWT, and refresh tokens. Implemented with microservices architecture." data-es="Servicio de autenticación con OAuth2, JWT y refresh tokens. Implementado con arquitectura de microservicios.">
+                Authentication service with OAuth2, JWT, and refresh tokens. Implemented with microservices architecture.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-[#9ece6a]/20 border border-[#9ece6a]/40 px-3 py-1 rounded text-sm text-[#9ece6a]">Python</span>
+                <span class="bg-[#2ac3de]/20 border border-[#2ac3de]/40 px-3 py-1 rounded text-sm text-[#2ac3de]">FastAPI</span>
+                <span class="bg-[#f7768e]/20 border border-[#f7768e]/40 px-3 py-1 rounded text-sm text-[#f7768e]">Redis</span>
+              </div>
+            </div>
+
+            <!-- Real-time Chat -->
+            <div class="bg-gradient-to-br from-[#1a1b26] to-[#24283b] p-6 rounded-lg hover:shadow-2xl hover:shadow-[#eb6f92]/20 transition border border-[#eb6f92]/20 hover:border-[#eb6f92]/50">
+              <h3 class="text-2xl font-bold mb-3 text-[#eb6f92]" data-en="Real-time Chat System" data-es="Sistema de Chat en Tiempo Real">Real-time Chat System</h3>
+              <p class="text-[#c0caf5] mb-4" data-en="Instant messaging application with WebSockets, chat rooms, and push notifications." data-es="Aplicación de mensajería instantánea con WebSockets, salas de chat y notificaciones push.">
+                Instant messaging application with WebSockets, chat rooms, and push notifications.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-[#7aa2f7]/20 border border-[#7aa2f7]/40 px-3 py-1 rounded text-sm text-[#7aa2f7]">Node.js</span>
+                <span class="bg-[#e0af68]/20 border border-[#e0af68]/40 px-3 py-1 rounded text-sm text-[#e0af68]">Socket.io</span>
+                <span class="bg-[#f7768e]/20 border border-[#f7768e]/40 px-3 py-1 rounded text-sm text-[#f7768e]">MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- APIs & Web Services Category -->
+        <div>
+          <h3 class="text-2xl font-bold mb-6 text-[#7aa2f7]" data-en="APIs & Web Services" data-es="APIs y Servicios Web">APIs & Web Services</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- E-commerce REST API -->
+            <div class="bg-gradient-to-br from-[#1a1b26] to-[#24283b] p-6 rounded-lg hover:shadow-2xl hover:shadow-[#7aa2f7]/20 transition border border-[#7aa2f7]/20 hover:border-[#7aa2f7]/50">
+              <h3 class="text-2xl font-bold mb-3 text-[#7aa2f7]" data-en="E-commerce REST API" data-es="API REST E-commerce">E-commerce REST API</h3>
+              <p class="text-[#c0caf5] mb-4" data-en="Complete API for e-commerce platform with JWT authentication, product management, shopping carts, and payments." data-es="API completa para plataforma de e-commerce con autenticación JWT, gestión de productos, carritos y pagos.">
+                Complete API for e-commerce platform with JWT authentication, product management, shopping carts, and payments.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-[#7aa2f7]/20 border border-[#7aa2f7]/40 px-3 py-1 rounded text-sm text-[#7aa2f7]">Node.js</span>
+                <span class="bg-[#9ece6a]/20 border border-[#9ece6a]/40 px-3 py-1 rounded text-sm text-[#9ece6a]">Express</span>
+                <span class="bg-[#bb9af7]/20 border border-[#bb9af7]/40 px-3 py-1 rounded text-sm text-[#bb9af7]">PostgreSQL</span>
+              </div>
+            </div>
+
+            <!-- GraphQL API -->
+            <div class="bg-gradient-to-br from-[#1a1b26] to-[#24283b] p-6 rounded-lg hover:shadow-2xl hover:shadow-[#2ac3de]/20 transition border border-[#2ac3de]/20 hover:border-[#2ac3de]/50">
+              <h3 class="text-2xl font-bold mb-3 text-[#2ac3de]" data-en="GraphQL API" data-es="API GraphQL">GraphQL API</h3>
+              <p class="text-[#c0caf5] mb-4" data-en="GraphQL API for content management with real-time subscriptions and query optimization." data-es="API GraphQL para gestión de contenido con subscripciones en tiempo real y optimización de queries.">
+                GraphQL API for content management with real-time subscriptions and query optimization.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-[#7aa2f7]/20 border border-[#7aa2f7]/40 px-3 py-1 rounded text-sm text-[#7aa2f7]">Node.js</span>
+                <span class="bg-[#eb6f92]/20 border border-[#eb6f92]/40 px-3 py-1 rounded text-sm text-[#eb6f92]">GraphQL</span>
+                <span class="bg-[#bb9af7]/20 border border-[#bb9af7]/40 px-3 py-1 rounded text-sm text-[#bb9af7]">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gradient-to-br from-[#1a1b26] to-[#24283b]">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8 bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="Contact" data-es="Contacto">
+          Contact
+        </h2>
+        <p class="text-xl text-[#c0caf5] mb-8" data-en="Interested in working together? Let's talk!" data-es="¿Interesado en trabajar juntos? ¡Hablemos!">
+          Interested in working together? Let's talk!
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+          <a href="mailto:jesusado.89@gmail.com" class="bg-gradient-to-r from-[#7aa2f7] to-[#2ac3de] hover:from-[#5a82d7] hover:to-[#1aa3be] px-8 py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl">
+            Email
+          </a>
+          <a href="https://github.com/yeshua89" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#24283b] to-[#1f1d2e] border-2 border-[#7aa2f7]/50 hover:border-[#7aa2f7] px-8 py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/jesus-datica/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#bb9af7] to-[#eb6f92] hover:from-[#9b7ad7] hover:to-[#cb4f72] px-8 py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#16161e] py-8 text-center text-[#565f89] border-t border-[#7aa2f7]/10">
+      <p data-en="© 2025 Jesús Datica. All rights reserved." data-es="© 2025 Jesús Datica. Todos los derechos reservados.">
+        © 2025 Jesús Datica. All rights reserved.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    // Language switcher functionality
+    let currentLang = 'en';
+    const langToggle = document.getElementById('lang-toggle');
+
+    langToggle?.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      langToggle.textContent = currentLang === 'en' ? 'ES' : 'EN';
+
+      // Update all translatable elements
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const element = el as HTMLElement;
+        if (currentLang === 'en') {
+          element.textContent = element.getAttribute('data-en');
+        } else {
+          element.textContent = element.getAttribute('data-es');
+        }
+      });
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href')!);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</Layout>
