@@ -2,6 +2,53 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
+<style>
+  /* Terminal cursor animation */
+  #terminal-input:focus {
+    caret-color: #9ece6a;
+  }
+
+  /* Smooth fade-in for terminal lines */
+  .terminal-line {
+    animation: fadeIn 0.2s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scrollbar styling for terminal output */
+  #terminal-output::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #terminal-output::-webkit-scrollbar-track {
+    background: #1a1b26;
+  }
+
+  #terminal-output::-webkit-scrollbar-thumb {
+    background: #565f89;
+    border-radius: 4px;
+  }
+
+  #terminal-output::-webkit-scrollbar-thumb:hover {
+    background: #7aa2f7;
+  }
+
+  /* Max height for terminal output */
+  #terminal-output {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+</style>
+
 <Layout title="Jesús Datica - Backend Developer">
   <!-- Navigation -->
   <nav class="fixed top-0 w-full bg-[#1a1b26]/90 backdrop-blur-sm border-b border-[#7aa2f7]/10 z-50">
@@ -107,10 +154,84 @@ import Layout from '../layouts/Layout.astro';
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-4 bg-gradient-to-br from-[#24283b] to-[#1f1d2e]">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="Projects" data-es="Proyectos">
-          Projects
-        </h2>
+        <div class="flex justify-between items-center mb-12">
+          <h2 class="text-4xl font-bold bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="Projects" data-es="Proyectos">
+            Projects
+          </h2>
+          <!-- Mode Toggle -->
+          <div class="flex gap-2 bg-[#1a1b26] rounded-lg p-1 border border-[#7aa2f7]/20">
+            <button id="terminal-mode-btn" class="px-4 py-2 rounded bg-[#7aa2f7] text-[#1a1b26] font-semibold transition">
+              <span data-en="Terminal" data-es="Terminal">Terminal</span>
+            </button>
+            <button id="grid-mode-btn" class="px-4 py-2 rounded text-[#7aa2f7] hover:bg-[#7aa2f7]/10 font-semibold transition">
+              <span data-en="Grid" data-es="Cuadrícula">Grid</span>
+            </button>
+          </div>
+        </div>
 
+        <!-- Terminal Mode -->
+        <div id="terminal-view" class="terminal-container">
+          <div class="bg-[#1a1b26] rounded-lg border border-[#7aa2f7]/30 overflow-hidden shadow-2xl">
+            <!-- Terminal Header -->
+            <div class="bg-[#24283b] px-4 py-2 border-b border-[#7aa2f7]/20 flex items-center gap-2">
+              <div class="flex gap-2">
+                <div class="w-3 h-3 rounded-full bg-[#f7768e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#e0af68]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#9ece6a]"></div>
+              </div>
+              <span class="ml-4 text-[#565f89] text-sm font-mono">projects@portfolio:~</span>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="p-6 font-mono text-sm">
+              <!-- Welcome Message -->
+              <div class="mb-4">
+                <p class="text-[#9ece6a]">Welcome to PortfolioOS 2.0 - Interactive Projects Terminal!</p>
+                <p class="text-[#565f89] mt-2">Type <span class="text-[#7aa2f7]">"help"</span> for commands, <span class="text-[#7aa2f7]">"tree"</span> for project structure</p>
+                <p class="text-[#565f89]">💡 Quick start:</p>
+                <p class="text-[#7aa2f7] ml-4">• cd ai <span class="text-[#565f89]">- Navigate to AI projects</span></p>
+                <p class="text-[#7aa2f7] ml-4">• ls <span class="text-[#565f89]">- List projects in current directory</span></p>
+                <p class="text-[#7aa2f7] ml-4">• cat ghostwriter <span class="text-[#565f89]">- View project details</span></p>
+                <p class="text-[#565f89] mt-2">⚡ Use TAB for autocomplete, ↑↓ for history, Ctrl+L to clear</p>
+              </div>
+
+              <!-- Terminal Output -->
+              <div id="terminal-output" class="mb-4 space-y-2"></div>
+
+              <!-- Terminal Input -->
+              <div class="flex items-center gap-2">
+                <span class="text-[#9ece6a]">$</span>
+                <input
+                  type="text"
+                  id="terminal-input"
+                  class="flex-1 bg-transparent border-none outline-none text-[#c0caf5] font-mono"
+                  placeholder="Type a command..."
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Filters -->
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span class="text-[#565f89]" data-en="Quick filters:" data-es="Filtros rápidos:">Quick filters:</span>
+            <button class="filter-btn px-3 py-1 rounded bg-[#bb9af7]/20 border border-[#bb9af7]/40 text-[#bb9af7] hover:bg-[#bb9af7]/30 transition text-sm" data-category="ai">
+              AI & Innovation
+            </button>
+            <button class="filter-btn px-3 py-1 rounded bg-[#9ece6a]/20 border border-[#9ece6a]/40 text-[#9ece6a] hover:bg-[#9ece6a]/30 transition text-sm" data-category="distributed">
+              Distributed Systems
+            </button>
+            <button class="filter-btn px-3 py-1 rounded bg-[#7aa2f7]/20 border border-[#7aa2f7]/40 text-[#7aa2f7] hover:bg-[#7aa2f7]/30 transition text-sm" data-category="api">
+              APIs & Web
+            </button>
+            <button class="filter-btn px-3 py-1 rounded bg-[#f7768e]/20 border border-[#f7768e]/40 text-[#f7768e] hover:bg-[#f7768e]/30 transition text-sm" data-filter="all">
+              <span data-en="Show All" data-es="Mostrar Todo">Show All</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid Mode -->
+        <div id="grid-view" class="hidden">
         <!-- AI & Innovation Category -->
         <div class="mb-16">
           <h3 class="text-2xl font-bold mb-6 text-[#bb9af7]" data-en="AI & Innovation" data-es="IA e Innovación">AI & Innovation</h3>
@@ -232,6 +353,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
         </div>
+        </div>
       </div>
     </section>
 
@@ -295,6 +417,640 @@ import Layout from '../layouts/Layout.astro';
           target.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
+          });
+        }
+      });
+    });
+
+    // Terminal functionality
+    const projects = {
+      'ghostwriter': {
+        name: 'GhostWriter',
+        category: 'ai',
+        description: 'AI coding assistant trained on your commit history using CodeLlama 34B + LoRA',
+        tech: ['Python', 'CodeLlama', 'LoRA', 'Docker', 'Telegram'],
+        color: '#bb9af7',
+        github: 'https://github.com/yeshua89',
+        demo: null
+      },
+      'repotimemachine': {
+        name: 'RepoTimeMachine',
+        category: 'ai',
+        description: 'Terminal-based repository explorer with 3D visualization and LLM narrator',
+        tech: ['Python', 'LLM', 'Git', 'Terminal Graphics', '3D', 'TTS'],
+        color: '#ff9e64',
+        github: 'https://github.com/yeshua89',
+        demo: null
+      },
+      'payflow': {
+        name: 'PayFlow',
+        category: 'distributed',
+        description: 'Distributed payment engine with event-driven architecture',
+        tech: ['Go', 'Python', 'FastAPI', 'NATS', 'Kafka', 'PostgreSQL', 'Redis'],
+        color: '#9ece6a',
+        github: 'https://github.com/yeshua89',
+        demo: null
+      },
+      'auth-microservice': {
+        name: 'Authentication Microservice',
+        category: 'distributed',
+        description: 'OAuth2 + JWT authentication service with microservices architecture',
+        tech: ['Python', 'FastAPI', 'Redis'],
+        color: '#bb9af7',
+        github: 'https://github.com/yeshua89',
+        demo: null
+      },
+      'realtime-chat': {
+        name: 'Real-time Chat System',
+        category: 'distributed',
+        description: 'Instant messaging with WebSockets and push notifications',
+        tech: ['Node.js', 'Socket.io', 'MongoDB'],
+        color: '#eb6f92',
+        github: 'https://github.com/yeshua89',
+        demo: null
+      },
+      'ecommerce-api': {
+        name: 'E-commerce REST API',
+        category: 'api',
+        description: 'Complete e-commerce API with JWT, products, carts, and payments',
+        tech: ['Node.js', 'Express', 'PostgreSQL'],
+        color: '#7aa2f7',
+        github: 'https://github.com/yeshua89',
+        demo: null
+      },
+      'graphql-api': {
+        name: 'GraphQL API',
+        category: 'api',
+        description: 'GraphQL API with real-time subscriptions and query optimization',
+        tech: ['Node.js', 'GraphQL', 'PostgreSQL'],
+        color: '#2ac3de',
+        github: 'https://github.com/yeshua89',
+        demo: null
+      }
+    };
+
+    const categories = {
+      'ai': { name: 'AI & Innovation', color: '#bb9af7' },
+      'distributed': { name: 'Distributed Systems & Backend', color: '#9ece6a' },
+      'api': { name: 'APIs & Web Services', color: '#7aa2f7' }
+    };
+
+    const terminalInput = document.getElementById('terminal-input') as HTMLInputElement;
+    const terminalOutput = document.getElementById('terminal-output') as HTMLDivElement;
+    const terminalModeBtn = document.getElementById('terminal-mode-btn');
+    const gridModeBtn = document.getElementById('grid-mode-btn');
+    const terminalView = document.getElementById('terminal-view');
+    const gridView = document.getElementById('grid-view');
+
+    let commandHistory: string[] = [];
+    let historyIndex = -1;
+    let currentDir = '~';
+    let currentCategory: string | null = null;
+
+    // Toggle between terminal and grid mode
+    terminalModeBtn?.addEventListener('click', () => {
+      terminalView?.classList.remove('hidden');
+      gridView?.classList.add('hidden');
+      terminalModeBtn.classList.add('bg-[#7aa2f7]', 'text-[#1a1b26]');
+      terminalModeBtn.classList.remove('text-[#7aa2f7]', 'hover:bg-[#7aa2f7]/10');
+      gridModeBtn?.classList.remove('bg-[#7aa2f7]', 'text-[#1a1b26]');
+      gridModeBtn?.classList.add('text-[#7aa2f7]', 'hover:bg-[#7aa2f7]/10');
+    });
+
+    gridModeBtn?.addEventListener('click', () => {
+      terminalView?.classList.add('hidden');
+      gridView?.classList.remove('hidden');
+      gridModeBtn.classList.add('bg-[#7aa2f7]', 'text-[#1a1b26]');
+      gridModeBtn.classList.remove('text-[#7aa2f7]', 'hover:bg-[#7aa2f7]/10');
+      terminalModeBtn?.classList.remove('bg-[#7aa2f7]', 'text-[#1a1b26]');
+      terminalModeBtn?.classList.add('text-[#7aa2f7]', 'hover:bg-[#7aa2f7]/10');
+    });
+
+    // Update prompt based on current directory
+    function updatePrompt() {
+      const promptElement = document.querySelector('.terminal-container .bg-\\[\\#24283b\\] span');
+      if (promptElement) {
+        promptElement.textContent = `projects@portfolio:${currentDir}`;
+      }
+    }
+
+    // Terminal commands
+    function executeCommand(cmd: string) {
+      const trimmedCmd = cmd.trim();
+      if (!trimmedCmd) return;
+
+      const parts = trimmedCmd.split(' ');
+      const command = parts[0].toLowerCase();
+      const args = parts.slice(1);
+
+      addOutput(`<span class="text-[#9ece6a]">$</span> <span class="text-[#c0caf5]">${trimmedCmd}</span>`);
+
+      switch(command) {
+        case 'cd':
+          changeDirectory(args[0]);
+          break;
+        case 'ls':
+          listDirectory(args);
+          break;
+        case 'pwd':
+          addOutput(`<span class="text-[#c0caf5]">${currentDir}</span>`);
+          break;
+        case 'cat':
+        case 'show':
+          if (args.length > 0) {
+            showProject(args.join('-'));
+          } else {
+            addOutput('<span class="text-[#f7768e]">Error: Specify a project name</span>');
+          }
+          break;
+        case 'grep':
+        case 'filter':
+          if (args.length > 0) {
+            filterByTech(args.join(' '));
+          } else {
+            addOutput('<span class="text-[#f7768e]">Error: Specify a technology</span>');
+          }
+          break;
+        case 'tree':
+          showTree();
+          break;
+        case 'neofetch':
+          showNeofetch();
+          break;
+        case 'contact':
+          showContact();
+          break;
+        case 'skills':
+          showSkills();
+          break;
+        case 'stats':
+          showStats();
+          break;
+        case 'git':
+          if (args[0] === 'log') {
+            showGitLog();
+          } else {
+            addOutput('<span class="text-[#f7768e]">Usage: git log</span>');
+          }
+          break;
+        case 'docker':
+          if (args[0] === 'ps') {
+            showDockerPs();
+          } else {
+            addOutput('<span class="text-[#f7768e]">Usage: docker ps</span>');
+          }
+          break;
+        case 'whoami':
+          addOutput('<span class="text-[#bb9af7]">Jesús Datica - Backend Developer</span>');
+          addOutput('<span class="text-[#565f89]">Specializing in distributed systems, APIs, and AI</span>');
+          break;
+        case 'uname':
+          addOutput('<span class="text-[#7aa2f7]">PortfolioOS 2.0 (TokyoNight Edition)</span>');
+          break;
+        case 'echo':
+          addOutput(`<span class="text-[#c0caf5]">${args.join(' ')}</span>`);
+          break;
+        case 'quote':
+          showRandomQuote();
+          break;
+        case 'matrix':
+          showMatrix();
+          break;
+        case 'clear':
+          terminalOutput.innerHTML = '';
+          break;
+        case 'help':
+        case 'man':
+          showHelp();
+          break;
+        case 'exit':
+          addOutput('<span class="text-[#f7768e]">Nice try! But you can\'t escape my portfolio 😎</span>');
+          break;
+        case 'sudo':
+          addOutput('<span class="text-[#f7768e]">Nice try, but you don\'t have sudo access here! 🔐</span>');
+          break;
+        case 'rm':
+          if (args.includes('-rf') && args.includes('/')) {
+            addOutput('<span class="text-[#f7768e]">😱 Whoa there! That would delete everything!</span>');
+            addOutput('<span class="text-[#9ece6a]">...but don\'t worry, this is a safe space 😌</span>');
+          } else {
+            addOutput('<span class="text-[#f7768e]">rm: cannot remove: Operation not permitted</span>');
+          }
+          break;
+        case 'hack':
+        case 'hackerman':
+          addOutput('<span class="text-[#9ece6a]">🎩 HACKERMAN MODE ACTIVATED 🎩</span>');
+          addOutput('<span class="text-[#bb9af7]">Hacking the mainframe...</span>');
+          setTimeout(() => addOutput('<span class="text-[#9ece6a]">Access granted! Just kidding 😄</span>'), 500);
+          break;
+        case 'coffee':
+          addOutput('<span class="text-[#e0af68]">☕ Brewing coffee... Please wait...</span>');
+          setTimeout(() => addOutput('<span class="text-[#9ece6a]">☕ Your coffee is ready! Enjoy coding!</span>'), 1000);
+          break;
+        default:
+          addOutput(`<span class="text-[#f7768e]">Command not found: ${command}</span>`);
+          addOutput('<span class="text-[#565f89]">Type "help" for available commands</span>');
+      }
+    }
+
+    // Change directory command
+    function changeDirectory(dir: string) {
+      if (!dir || dir === '~') {
+        currentDir = '~';
+        currentCategory = null;
+        addOutput('<span class="text-[#9ece6a]">Changed to home directory</span>');
+      } else if (dir === '..') {
+        if (currentDir !== '~') {
+          currentDir = '~';
+          currentCategory = null;
+          addOutput('<span class="text-[#9ece6a]">Changed to home directory</span>');
+        }
+      } else {
+        const category = Object.keys(categories).find(key =>
+          key === dir.toLowerCase() || categories[key as keyof typeof categories].name.toLowerCase().includes(dir.toLowerCase())
+        );
+
+        if (category) {
+          currentDir = `~/${category}`;
+          currentCategory = category;
+          const catInfo = categories[category as keyof typeof categories];
+          addOutput(`<span style="color: ${catInfo.color}">Entered ${catInfo.name}</span>`);
+        } else {
+          addOutput(`<span class="text-[#f7768e]">cd: ${dir}: No such directory</span>`);
+          addOutput('<span class="text-[#565f89]">Available: ai, distributed, api</span>');
+        }
+      }
+      updatePrompt();
+    }
+
+    // List directory command
+    function listDirectory(args: string[]) {
+      if (args.includes('--categories') || args.includes('-c')) {
+        listCategories();
+      } else if (args.includes('--all') || args.includes('-a')) {
+        listAllProjects();
+      } else {
+        // List current directory
+        if (currentCategory) {
+          const projectsInCategory = Object.entries(projects).filter(([_, p]) => p.category === currentCategory);
+          projectsInCategory.forEach(([key, project]) => {
+            addOutput(`<span style="color: ${project.color}">▸ ${key}</span>`);
+          });
+        } else {
+          Object.keys(categories).forEach(key => {
+            const cat = categories[key as keyof typeof categories];
+            addOutput(`<span style="color: ${cat.color}">📁 ${key}/</span>`);
+          });
+        }
+      }
+    }
+
+    function addOutput(html: string) {
+      const line = document.createElement('div');
+      line.innerHTML = html;
+      line.classList.add('terminal-line');
+      terminalOutput.appendChild(line);
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
+
+    function listCategories() {
+      Object.entries(categories).forEach(([key, cat]) => {
+        addOutput(`<span style="color: ${cat.color}">📁 ${cat.name}</span> <span class="text-[#565f89]">(${key})</span>`);
+      });
+    }
+
+    function listAllProjects() {
+      Object.entries(projects).forEach(([key, project]) => {
+        addOutput(`<span style="color: ${project.color}">▸ ${project.name}</span> <span class="text-[#565f89]">(${key})</span>`);
+      });
+    }
+
+    function showTree() {
+      addOutput('<span class="text-[#9ece6a]">.</span>');
+      Object.entries(categories).forEach(([catKey, cat], catIndex, catArray) => {
+        const isLastCat = catIndex === catArray.length - 1;
+        const catPrefix = isLastCat ? '└── ' : '├── ';
+        addOutput(`<span style="color: ${cat.color}">${catPrefix}${catKey}/</span>`);
+
+        const projectsInCat = Object.entries(projects).filter(([_, p]) => p.category === catKey);
+        projectsInCat.forEach(([key, project], projIndex, projArray) => {
+          const isLastProj = projIndex === projArray.length - 1;
+          const linePrefix = isLastCat ? '    ' : '│   ';
+          const projPrefix = isLastProj ? '└── ' : '├── ';
+          addOutput(`<span class="text-[#565f89]">${linePrefix}${projPrefix}</span><span style="color: ${project.color}">${key}</span>`);
+        });
+      });
+    }
+
+    function showProject(projectKey: string) {
+      const project = projects[projectKey as keyof typeof projects];
+      if (project) {
+        addOutput('<div class="mt-2 mb-2 pl-4">');
+        addOutput(`<span style="color: ${project.color}" class="font-bold text-lg">📦 ${project.name}</span>`);
+        addOutput(`<span class="text-[#c0caf5] block mt-1">${project.description}</span>`);
+        addOutput(`<span class="text-[#e0af68] block mt-2">🛠️  Technologies:</span>`);
+        addOutput(`<span class="text-[#565f89] ml-4">${project.tech.join(', ')}</span>`);
+        if (project.github) {
+          addOutput(`<span class="text-[#7aa2f7] block mt-2">🔗 GitHub: <a href="${project.github}" target="_blank" class="underline">${project.github}</a></span>`);
+        }
+        addOutput('</div>');
+      } else {
+        addOutput('<span class="text-[#f7768e]">Project not found</span>');
+        addOutput('<span class="text-[#565f89]">Try "ls --all" to see available projects</span>');
+      }
+    }
+
+    function filterByTech(tech: string) {
+      const filtered = Object.entries(projects).filter(([_, project]) =>
+        project.tech.some(t => t.toLowerCase().includes(tech.toLowerCase()))
+      );
+      if (filtered.length > 0) {
+        addOutput(`<span class="text-[#9ece6a]">Found ${filtered.length} project(s) with "${tech}":</span>`);
+        filtered.forEach(([key, project]) => {
+          addOutput(`<span style="color: ${project.color}">▸ ${project.name}</span> <span class="text-[#565f89]">(${key})</span>`);
+        });
+      } else {
+        addOutput(`<span class="text-[#f7768e]">No projects found with "${tech}"</span>`);
+      }
+    }
+
+    function showNeofetch() {
+      const infoLines = [
+        '<span class="text-[#9ece6a] font-bold">jesusado</span><span class="text-[#c0caf5]">@</span><span class="text-[#7aa2f7] font-bold">portfolio</span>',
+        '<span class="text-[#565f89]">────────────────────────────────────</span>',
+        '<span class="text-[#7aa2f7]">OS:</span> <span class="text-[#c0caf5]">PortfolioOS 2.0 (TokyoNight)</span>',
+        '<span class="text-[#7aa2f7]">Shell:</span> <span class="text-[#c0caf5]">interactive-zsh</span>',
+        '<span class="text-[#7aa2f7]">Uptime:</span> <span class="text-[#c0caf5]">Building systems since 2020</span>',
+        '<span class="text-[#7aa2f7]">Packages:</span> <span class="text-[#c0caf5]">7 projects, 15+ technologies</span>',
+        '<span class="text-[#7aa2f7]">Theme:</span> <span class="text-[#c0caf5]">Backend Developer</span>',
+        '<span class="text-[#7aa2f7]">Focus:</span> <span class="text-[#c0caf5]">AI/Distributed Systems</span>',
+        '<span class="text-[#7aa2f7]">Terminal:</span> <span class="text-[#c0caf5]">Kitty-inspired</span>',
+        '<span class="text-[#7aa2f7]">CPU:</span> <span class="text-[#c0caf5]">Coffee + Code</span>',
+        '<span class="text-[#7aa2f7]">Memory:</span> <span class="text-[#c0caf5]">Infinite learning capacity</span>'
+      ];
+
+      const info = infoLines.map(line => `<div>${line}</div>`).join('');
+
+      addOutput(`
+        <div class="flex flex-row gap-6 items-start my-3">
+          <div class="flex-shrink-0">
+            <img src="/neofetch.png" alt="neofetch" class="w-48 h-auto" />
+          </div>
+          <div class="flex-1 font-mono text-sm space-y-0.5">
+            ${info}
+          </div>
+        </div>
+      `);
+    }
+
+    function showContact() {
+      addOutput('<div class="mt-2 mb-2">');
+      addOutput('<span class="text-[#9ece6a] text-lg">📧 Let\'s Build Something Amazing Together!</span>');
+      addOutput('<span class="text-[#565f89]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
+      addOutput('<span class="text-[#c0caf5]">📮 Email:</span>     <span class="text-[#7aa2f7]">jesusado.89@gmail.com</span>');
+      addOutput('<span class="text-[#c0caf5]">💼 LinkedIn:</span>  <a href="https://linkedin.com/in/jesus-datica" target="_blank" class="text-[#7aa2f7] underline">linkedin.com/in/jesus-datica</a>');
+      addOutput('<span class="text-[#c0caf5]">🐙 GitHub:</span>    <a href="https://github.com/yeshua89" target="_blank" class="text-[#7aa2f7] underline">github.com/yeshua89</a>');
+      addOutput('<span class="text-[#c0caf5]">🌐 Location:</span>  <span class="text-[#bb9af7]">Remote / Available Worldwide</span>');
+      addOutput('<span class="text-[#c0caf5]">⚡ Status:</span>    <span class="text-[#9ece6a]">Open to opportunities</span>');
+      addOutput('');
+      addOutput('<span class="text-[#e0af68]">💡 Interested in:</span>');
+      addOutput('<span class="text-[#565f89]">  • Distributed Systems Architecture</span>');
+      addOutput('<span class="text-[#565f89]">  • AI/ML Integration Projects</span>');
+      addOutput('<span class="text-[#565f89]">  • High-Performance Backend Systems</span>');
+      addOutput('<span class="text-[#565f89]">  • Fintech & Payment Processing</span>');
+      addOutput('</div>');
+    }
+
+    function showSkills() {
+      addOutput('<div class="mt-2 mb-2">');
+      addOutput('<span class="text-[#9ece6a] text-lg">🛠️  Technical Skills:</span>');
+      addOutput('<span class="text-[#565f89]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
+      addOutput('<span class="text-[#c0caf5]">Backend Development</span>  <span class="text-[#7aa2f7]">████████████</span><span class="text-[#1a1b26]">░</span> <span class="text-[#9ece6a]">95%</span>');
+      addOutput('<span class="text-[#c0caf5]">Distributed Systems</span>  <span class="text-[#7aa2f7]">██████████</span><span class="text-[#1a1b26]">░░</span> <span class="text-[#9ece6a]">90%</span>');
+      addOutput('<span class="text-[#c0caf5]">AI/ML Integration</span>    <span class="text-[#7aa2f7]">█████████</span><span class="text-[#1a1b26]">░░░</span> <span class="text-[#9ece6a]">85%</span>');
+      addOutput('<span class="text-[#c0caf5]">API Design</span>           <span class="text-[#7aa2f7]">████████████</span><span class="text-[#1a1b26]">░</span> <span class="text-[#9ece6a]">95%</span>');
+      addOutput('<span class="text-[#c0caf5]">Database Design</span>      <span class="text-[#7aa2f7]">██████████</span><span class="text-[#1a1b26]">░░</span> <span class="text-[#9ece6a]">90%</span>');
+      addOutput('<span class="text-[#c0caf5]">DevOps/Docker</span>        <span class="text-[#7aa2f7]">█████████</span><span class="text-[#1a1b26]">░░░</span> <span class="text-[#9ece6a]">85%</span>');
+      addOutput('<span class="text-[#c0caf5]">Microservices</span>        <span class="text-[#7aa2f7]">██████████</span><span class="text-[#1a1b26]">░░</span> <span class="text-[#9ece6a]">90%</span>');
+      addOutput('<span class="text-[#c0caf5]">Event-Driven Arch</span>    <span class="text-[#7aa2f7]">█████████</span><span class="text-[#1a1b26]">░░░</span> <span class="text-[#9ece6a]">85%</span>');
+      addOutput('</div>');
+    }
+
+    function showStats() {
+      const totalProjects = Object.keys(projects).length;
+      const aiProjects = Object.values(projects).filter(p => p.category === 'ai').length;
+      const distributedProjects = Object.values(projects).filter(p => p.category === 'distributed').length;
+      const apiProjects = Object.values(projects).filter(p => p.category === 'api').length;
+
+      const techCount: Record<string, number> = {};
+      Object.values(projects).forEach(p => {
+        p.tech.forEach(t => {
+          techCount[t] = (techCount[t] || 0) + 1;
+        });
+      });
+      const mostUsed = Object.entries(techCount).sort((a, b) => b[1] - a[1])[0];
+
+      addOutput('<div class="mt-2 mb-2">');
+      addOutput('<span class="text-[#9ece6a] text-lg">📊 Portfolio Statistics:</span>');
+      addOutput('<span class="text-[#565f89]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
+      addOutput(`<span class="text-[#c0caf5]">Total Projects:</span>     <span class="text-[#7aa2f7]">${totalProjects}</span>`);
+      addOutput(`<span class="text-[#c0caf5]">AI Projects:</span>        <span class="text-[#bb9af7]">${aiProjects}</span>`);
+      addOutput(`<span class="text-[#c0caf5]">Distributed Sys:</span>    <span class="text-[#9ece6a]">${distributedProjects}</span>`);
+      addOutput(`<span class="text-[#c0caf5]">APIs:</span>               <span class="text-[#2ac3de]">${apiProjects}</span>`);
+      addOutput('<span class="text-[#565f89]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
+      addOutput(`<span class="text-[#c0caf5]">Most Used Tech:</span>     <span class="text-[#e0af68]">${mostUsed[0]} (${mostUsed[1]} projects)</span>`);
+      addOutput('<span class="text-[#c0caf5]">Languages:</span>          <span class="text-[#f7768e]">Python, Go, Node.js, JavaScript</span>');
+      addOutput('<span class="text-[#c0caf5]">Databases:</span>          <span class="text-[#bb9af7]">PostgreSQL, MongoDB, Redis</span>');
+      addOutput('<span class="text-[#c0caf5]">Message Queues:</span>     <span class="text-[#e0af68]">Kafka, NATS</span>');
+      addOutput('<span class="text-[#c0caf5]">Containers:</span>         <span class="text-[#2ac3de]">Docker (6 projects)</span>');
+      addOutput('</div>');
+    }
+
+    function showGitLog() {
+      addOutput('<div class="mt-2 mb-2 font-mono">');
+      addOutput('<span class="text-[#e0af68]">f7a2c3b</span> <span class="text-[#565f89]">(</span><span class="text-[#2ac3de]">HEAD -></span> <span class="text-[#9ece6a]">main</span><span class="text-[#565f89]">)</span> <span class="text-[#c0caf5]">feat: add RepoTimeMachine with 3D visualization</span>');
+      addOutput('<span class="text-[#e0af68]">3e9d1a4</span> <span class="text-[#c0caf5]">feat: implement PayFlow distributed payment engine</span>');
+      addOutput('<span class="text-[#e0af68]">2c8f6b9</span> <span class="text-[#c0caf5]">feat: create GhostWriter AI code assistant</span>');
+      addOutput('<span class="text-[#e0af68]">1a5e3d7</span> <span class="text-[#c0caf5]">feat: add authentication microservice with OAuth2</span>');
+      addOutput('<span class="text-[#e0af68]">9b2c4f1</span> <span class="text-[#c0caf5]">feat: implement real-time chat system</span>');
+      addOutput('<span class="text-[#e0af68]">7d1e8a3</span> <span class="text-[#c0caf5]">feat: create e-commerce REST API</span>');
+      addOutput('<span class="text-[#e0af68]">4f9b2c6</span> <span class="text-[#c0caf5]">feat: build GraphQL API with subscriptions</span>');
+      addOutput('<span class="text-[#e0af68]">2a1c5e8</span> <span class="text-[#c0caf5]">init: create PortfolioOS 2.0</span>');
+      addOutput('</div>');
+    }
+
+    function showDockerPs() {
+      addOutput('<div class="mt-2 mb-2 font-mono text-xs">');
+      addOutput('<span class="text-[#c0caf5]">CONTAINER ID   IMAGE              STATUS       PORTS</span>');
+      addOutput('<span class="text-[#bb9af7]">a1b2c3d4e5f6</span>   <span class="text-[#9ece6a]">ghostwriter:2.0   </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8000</span>');
+      addOutput('<span class="text-[#bb9af7]">b2c3d4e5f6a7</span>   <span class="text-[#9ece6a]">payflow:1.5       </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8001</span>');
+      addOutput('<span class="text-[#bb9af7]">c3d4e5f6a7b8</span>   <span class="text-[#9ece6a]">repotimemachine   </span> <span class="text-[#7aa2f7]">Up 1 year </span>   <span class="text-[#565f89]">0.0.0.0:8002</span>');
+      addOutput('<span class="text-[#bb9af7]">d4e5f6a7b8c9</span>   <span class="text-[#9ece6a]">auth-service      </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8003</span>');
+      addOutput('<span class="text-[#bb9af7]">e5f6a7b8c9d0</span>   <span class="text-[#9ece6a]">realtime-chat     </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8004</span>');
+      addOutput('<span class="text-[#bb9af7]">f6a7b8c9d0e1</span>   <span class="text-[#9ece6a]">ecommerce-api     </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8005</span>');
+      addOutput('<span class="text-[#bb9af7]">a7b8c9d0e1f2</span>   <span class="text-[#9ece6a]">graphql-api       </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8006</span>');
+      addOutput('</div>');
+    }
+
+    function showRandomQuote() {
+      const quotes = [
+        { text: '"Talk is cheap. Show me the code."', author: 'Linus Torvalds' },
+        { text: '"Code is like humor. When you have to explain it, it\'s bad."', author: 'Cory House' },
+        { text: '"First, solve the problem. Then, write the code."', author: 'John Johnson' },
+        { text: '"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."', author: 'Martin Fowler' },
+        { text: '"The best error message is the one that never shows up."', author: 'Thomas Fuchs' }
+      ];
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+      addOutput(`<span class="text-[#bb9af7]">${quote.text}</span>`);
+      addOutput(`<span class="text-[#565f89]">  - ${quote.author}</span>`);
+    }
+
+    function showMatrix() {
+      addOutput('<span class="text-[#9ece6a]">Entering the Matrix...</span>');
+      setTimeout(() => {
+        addOutput('<span class="text-[#9ece6a]">01001000 01000101 01001100 01001100 01001111</span>');
+      }, 300);
+      setTimeout(() => {
+        addOutput('<span class="text-[#7aa2f7]">Wake up, Neo... The portfolio has you.</span>');
+      }, 600);
+      setTimeout(() => {
+        addOutput('<span class="text-[#f7768e]">Follow the white rabbit 🐰</span>');
+      }, 900);
+    }
+
+    function showHelp() {
+      addOutput('<div class="space-y-1">');
+      addOutput('<span class="text-[#9ece6a] font-bold">Navigation Commands:</span>');
+      addOutput('<span class="text-[#7aa2f7]">  cd [category]</span> <span class="text-[#565f89]">- Change to category directory</span>');
+      addOutput('<span class="text-[#7aa2f7]">  cd ..</span> <span class="text-[#565f89]">- Go back to home</span>');
+      addOutput('<span class="text-[#7aa2f7]">  ls</span> <span class="text-[#565f89]">- List current directory</span>');
+      addOutput('<span class="text-[#7aa2f7]">  ls --all</span> <span class="text-[#565f89]">- List all projects</span>');
+      addOutput('<span class="text-[#7aa2f7]">  pwd</span> <span class="text-[#565f89]">- Print working directory</span>');
+      addOutput('<span class="text-[#7aa2f7]">  tree</span> <span class="text-[#565f89]">- Show project tree</span>');
+      addOutput('');
+      addOutput('<span class="text-[#9ece6a] font-bold">Project Commands:</span>');
+      addOutput('<span class="text-[#7aa2f7]">  cat [project]</span> <span class="text-[#565f89]">- View project details</span>');
+      addOutput('<span class="text-[#7aa2f7]">  grep [tech]</span> <span class="text-[#565f89]">- Filter by technology</span>');
+      addOutput('');
+      addOutput('<span class="text-[#9ece6a] font-bold">Info Commands:</span>');
+      addOutput('<span class="text-[#7aa2f7]">  neofetch</span> <span class="text-[#565f89]">- Display system info (cool!)</span>');
+      addOutput('<span class="text-[#7aa2f7]">  contact</span> <span class="text-[#565f89]">- Show contact information</span>');
+      addOutput('<span class="text-[#7aa2f7]">  skills</span> <span class="text-[#565f89]">- Display technical skills</span>');
+      addOutput('<span class="text-[#7aa2f7]">  stats</span> <span class="text-[#565f89]">- Portfolio statistics</span>');
+      addOutput('<span class="text-[#7aa2f7]">  git log</span> <span class="text-[#565f89]">- Show commit history</span>');
+      addOutput('<span class="text-[#7aa2f7]">  docker ps</span> <span class="text-[#565f89]">- List running containers</span>');
+      addOutput('');
+      addOutput('<span class="text-[#9ece6a] font-bold">System Commands:</span>');
+      addOutput('<span class="text-[#7aa2f7]">  whoami</span> <span class="text-[#565f89]">- Display user info</span>');
+      addOutput('<span class="text-[#7aa2f7]">  quote</span> <span class="text-[#565f89]">- Random coding quote</span>');
+      addOutput('<span class="text-[#7aa2f7]">  matrix</span> <span class="text-[#565f89]">- Enter the Matrix 🐰</span>');
+      addOutput('<span class="text-[#7aa2f7]">  clear</span> <span class="text-[#565f89]">- Clear terminal</span>');
+      addOutput('<span class="text-[#7aa2f7]">  help</span> <span class="text-[#565f89]">- Show this help</span>');
+      addOutput('');
+      addOutput('<span class="text-[#565f89]">💡 Tip: Use TAB for autocomplete, ↑↓ for history, Ctrl+L to clear</span>');
+      addOutput('</div>');
+    }
+
+    // Tab completion function
+    function tabComplete() {
+      const input = terminalInput.value;
+      const parts = input.split(' ');
+      const command = parts[0].toLowerCase();
+      const lastPart = parts[parts.length - 1].toLowerCase();
+
+      // Get all possible completions
+      let suggestions: string[] = [];
+
+      if (parts.length === 1) {
+        // Command completion
+        const commands = ['cd', 'ls', 'cat', 'show', 'grep', 'filter', 'tree', 'pwd', 'whoami', 'help', 'clear', 'uname', 'echo', 'neofetch', 'contact', 'skills', 'stats', 'git', 'docker', 'quote', 'matrix', 'coffee', 'hack'];
+        suggestions = commands.filter(cmd => cmd.startsWith(lastPart));
+      } else if (command === 'cd') {
+        // Directory completion
+        const dirs = Object.keys(categories);
+        suggestions = dirs.filter(dir => dir.startsWith(lastPart));
+      } else if (command === 'cat' || command === 'show') {
+        // Project completion
+        const projectKeys = Object.keys(projects);
+        suggestions = projectKeys.filter(key => key.startsWith(lastPart));
+      } else if (command === 'grep' || command === 'filter') {
+        // Technology completion
+        const allTechs = new Set<string>();
+        Object.values(projects).forEach(p => p.tech.forEach(t => allTechs.add(t.toLowerCase())));
+        suggestions = Array.from(allTechs).filter(tech => tech.startsWith(lastPart));
+      }
+
+      if (suggestions.length === 1) {
+        // Single match - complete it
+        parts[parts.length - 1] = suggestions[0];
+        terminalInput.value = parts.join(' ');
+      } else if (suggestions.length > 1) {
+        // Multiple matches - show them
+        addOutput(`<span class="text-[#9ece6a]">$</span> <span class="text-[#c0caf5]">${input}</span>`);
+        addOutput(`<span class="text-[#565f89]">${suggestions.join('  ')}</span>`);
+      }
+    }
+
+    // Terminal input handling
+    terminalInput?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const cmd = terminalInput.value.trim();
+        if (cmd) {
+          commandHistory.push(cmd);
+          historyIndex = commandHistory.length;
+          executeCommand(cmd);
+          terminalInput.value = '';
+        }
+      } else if (e.key === 'Tab') {
+        e.preventDefault();
+        tabComplete();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (historyIndex > 0) {
+          historyIndex--;
+          terminalInput.value = commandHistory[historyIndex];
+        }
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (historyIndex < commandHistory.length - 1) {
+          historyIndex++;
+          terminalInput.value = commandHistory[historyIndex];
+        } else {
+          historyIndex = commandHistory.length;
+          terminalInput.value = '';
+        }
+      } else if (e.ctrlKey && e.key === 'l') {
+        // Ctrl+L to clear (like real terminal)
+        e.preventDefault();
+        terminalOutput.innerHTML = '';
+      } else if (e.ctrlKey && e.key === 'c') {
+        // Ctrl+C to cancel current line
+        e.preventDefault();
+        terminalInput.value = '';
+        addOutput(`<span class="text-[#9ece6a]">$</span> <span class="text-[#c0caf5]">${terminalInput.value}</span>`);
+        addOutput('<span class="text-[#f7768e]">^C</span>');
+      }
+    });
+
+    // Quick filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-category');
+        const filter = btn.getAttribute('data-filter');
+
+        if (filter === 'all') {
+          terminalInput.value = 'ls --all';
+        } else if (category) {
+          const categoryNames: Record<string, string> = {
+            'ai': 'AI & Innovation',
+            'distributed': 'Distributed Systems',
+            'api': 'APIs & Web Services'
+          };
+          addOutput(`<span class="text-[#9ece6a]">$</span> <span class="text-[#c0caf5]">filter ${category}</span>`);
+          const filtered = Object.entries(projects).filter(([_, p]) => p.category === category);
+          addOutput(`<span class="text-[#bb9af7]">${categoryNames[category]}:</span>`);
+          filtered.forEach(([key, project]) => {
+            addOutput(`<span style="color: ${project.color}">▸ ${project.name}</span> <span class="text-[#565f89]">(${key})</span>`);
           });
         }
       });
