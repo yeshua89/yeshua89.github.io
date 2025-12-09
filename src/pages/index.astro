@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 <style>
   /* Terminal cursor animation */
   #terminal-input:focus {
-    caret-color: #9ece6a;
+    caret-color: #a6e3a1;
   }
 
   /* Smooth fade-in for terminal lines */
@@ -30,16 +30,16 @@ import Layout from '../layouts/Layout.astro';
   }
 
   #terminal-output::-webkit-scrollbar-track {
-    background: #1a1b26;
+    background: #1e1e2e;
   }
 
   #terminal-output::-webkit-scrollbar-thumb {
-    background: #565f89;
+    background: #6c7086;
     border-radius: 4px;
   }
 
   #terminal-output::-webkit-scrollbar-thumb:hover {
-    background: #7aa2f7;
+    background: #89b4fa;
   }
 
   /* Max height for terminal output */
@@ -51,58 +51,63 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Jesús Datica - Backend Developer">
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-[#1a1b26]/90 backdrop-blur-sm border-b border-[#7aa2f7]/10 z-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-      <div class="flex justify-between items-center">
-        <a href="#" class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent hover:from-[#bb9af7] hover:to-[#eb6f92] transition-all">
-          JD
-        </a>
-        <div class="flex items-center gap-3 sm:gap-6">
-          <div class="hidden md:flex gap-4 lg:gap-6">
-            <a href="#about" class="text-sm lg:text-base text-[#c0caf5] hover:text-[#7aa2f7] transition nav-link" data-en="About" data-es="Sobre Mí">About</a>
-            <a href="#skills" class="text-sm lg:text-base text-[#c0caf5] hover:text-[#7aa2f7] transition nav-link" data-en="Skills" data-es="Habilidades">Skills</a>
-            <a href="#projects" class="text-sm lg:text-base text-[#c0caf5] hover:text-[#7aa2f7] transition nav-link" data-en="Projects" data-es="Proyectos">Projects</a>
-            <a href="#contact" class="text-sm lg:text-base text-[#c0caf5] hover:text-[#7aa2f7] transition nav-link" data-en="Contact" data-es="Contacto">Contact</a>
-          </div>
-          <!-- Language Switcher -->
-          <button id="lang-toggle" class="px-2.5 sm:px-3 py-1 rounded border border-[#7aa2f7]/30 text-[#7aa2f7] hover:bg-[#7aa2f7]/10 transition text-xs sm:text-sm font-semibold">
-            ES
-          </button>
+  <nav class="fixed top-0 w-full bg-[#1e1e2e]/95 backdrop-blur-sm border-b border-[#89b4fa]/20 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
+      <div class="flex justify-center items-center gap-8 sm:gap-10">
+        <div class="flex gap-6 lg:gap-8">
+          <a href="#about" class="text-sm lg:text-base text-[#cdd6f4] hover:text-[#89b4fa] transition font-medium nav-link" data-en="About" data-es="Sobre Mí">About</a>
+          <a href="#skills" class="text-sm lg:text-base text-[#cdd6f4] hover:text-[#89b4fa] transition font-medium nav-link" data-en="Skills" data-es="Habilidades">Skills</a>
+          <a href="#projects" class="text-sm lg:text-base text-[#cdd6f4] hover:text-[#89b4fa] transition font-medium nav-link" data-en="Projects" data-es="Proyectos">Projects</a>
+          <a href="#contact" class="text-sm lg:text-base text-[#cdd6f4] hover:text-[#89b4fa] transition font-medium nav-link" data-en="Contact" data-es="Contacto">Contact</a>
         </div>
+        <!-- Language Switcher -->
+        <button id="lang-toggle" class="px-3 sm:px-4 py-1.5 rounded-lg border-2 border-[#89b4fa]/40 text-[#89b4fa] hover:bg-[#89b4fa]/10 hover:border-[#89b4fa] transition text-xs sm:text-sm font-bold">
+          ES
+        </button>
       </div>
     </div>
   </nav>
 
   <main class="min-h-screen">
     <!-- Hero Section -->
-    <section id="hero" class="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-[#1a1b26] via-[#24283b] to-[#1f1d2e] overflow-hidden">
+    <section id="hero" class="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-[#1e1e2e] via-[#181825] to-[#11111b] overflow-hidden pt-20">
       <!-- Logo Background -->
-      <div class="absolute inset-0 flex items-center justify-center opacity-15">
+      <div class="absolute inset-0 flex items-center justify-center opacity-10">
         <img src="/logo.png" alt="Background Logo" class="w-full max-w-xl sm:max-w-2xl md:max-w-3xl h-auto object-contain px-4" />
       </div>
 
       <!-- Content -->
-      <div class="relative text-center px-4 sm:px-6 z-10">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-[#7aa2f7] via-[#bb9af7] to-[#eb6f92] bg-clip-text text-transparent">
-          <span data-en="Hi! I'm" data-es="¡Hola! Soy" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl block mb-4">Hi! I'm</span>
+      <div class="relative text-center px-4 sm:px-6 z-10 max-w-5xl mx-auto">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 bg-gradient-to-r from-[#89b4fa] via-[#cba6f7] to-[#f5c2e7] bg-clip-text text-transparent">
+          <span data-en="Hi! I'm" data-es="¡Hola! Soy" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl block mb-6 text-[#a6adc8]">Hi! I'm</span>
           <span class="block">Jesús Datica</span>
         </h1>
-        <p class="text-lg sm:text-xl md:text-2xl text-[#c0caf5] mb-6 sm:mb-8">
+        <p class="text-xl sm:text-2xl md:text-3xl text-[#cdd6f4] mb-6 font-semibold">
           Backend Developer
         </p>
-        <p class="text-base sm:text-lg text-[#9699a3] max-w-xl sm:max-w-2xl mx-auto px-4" data-en="Specialized in building robust and scalable APIs" data-es="Especializado en crear APIs robustas y escalables">
+        <p class="text-base sm:text-lg md:text-xl text-[#a6adc8] max-w-2xl mx-auto mb-12 leading-relaxed" data-en="Specialized in building robust and scalable APIs" data-es="Especializado en crear APIs robustas y escalables">
           Specialized in building robust and scalable APIs
         </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#projects" class="group px-8 py-3.5 bg-gradient-to-r from-[#89b4fa] to-[#74c7ec] hover:from-[#74c7ec] hover:to-[#89dceb] rounded-lg font-semibold text-[#11111b] transition-all shadow-lg hover:shadow-xl hover:scale-105 text-base sm:text-lg">
+            <span data-en="View Projects" data-es="Ver Proyectos">View Projects</span>
+          </a>
+          <a href="#contact" class="px-8 py-3.5 bg-[#313244] hover:bg-[#45475a] border-2 border-[#89b4fa]/30 hover:border-[#89b4fa] rounded-lg font-semibold text-[#cdd6f4] transition-all text-base sm:text-lg">
+            <span data-en="Contact Me" data-es="Contactar">Contact Me</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#24283b] to-[#1f1d2e]">
+    <section id="about" class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 bg-gradient-to-br from-[#181825] to-[#11111b]">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12 text-center bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="About Me" data-es="Sobre Mí">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-14 md:mb-16 text-center bg-gradient-to-r from-[#89b4fa] to-[#cba6f7] bg-clip-text text-transparent" data-en="About Me" data-es="Sobre Mí">
           About Me
         </h2>
-        <div class="space-y-4 sm:space-y-5 md:space-y-6 text-base sm:text-lg text-[#c0caf5] leading-relaxed">
+        <div class="space-y-6 sm:space-y-7 md:space-y-8 text-base sm:text-lg md:text-xl text-[#cdd6f4] leading-relaxed">
           <p data-en="I'm a backend developer passionate about creating scalable and efficient solutions. I specialize in designing and implementing robust systems that can handle high-performance demands while maintaining code quality and best practices." data-es="Soy un desarrollador backend apasionado por crear soluciones escalables y eficientes. Me especializo en diseñar e implementar sistemas robustos que pueden manejar demandas de alto rendimiento mientras mantengo la calidad del código y las mejores prácticas.">
             I'm a backend developer passionate about creating scalable and efficient solutions. I specialize in designing and implementing robust systems that can handle high-performance demands while maintaining code quality and best practices.
           </p>
@@ -117,85 +122,85 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-12 sm:py-14 md:py-16 px-4 sm:px-6 bg-gradient-to-br from-[#1a1b26] to-[#24283b]">
+    <section id="skills" class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 bg-gradient-to-br from-[#1e1e2e] to-[#181825]">
       <div class="max-w-5xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="Skills & Technologies" data-es="Habilidades y Tecnologías">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-12 text-center bg-gradient-to-r from-[#89b4fa] to-[#cba6f7] bg-clip-text text-transparent" data-en="Skills & Technologies" data-es="Habilidades y Tecnologías">
           Skills & Technologies
         </h2>
 
-        <div class="space-y-2 sm:space-y-3">
+        <div class="space-y-3 sm:space-y-4">
           <!-- Languages -->
-          <details class="group bg-[#1a1b26] rounded-lg border border-[#9ece6a]/20 overflow-hidden">
-            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#24283b] transition-colors flex items-center justify-between">
-              <span class="text-base sm:text-lg font-semibold text-[#9ece6a]" data-en="Languages" data-es="Lenguajes">Languages</span>
-              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#9ece6a] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <details class="group bg-[#313244] rounded-lg border border-[#a6e3a1]/30 overflow-hidden hover:border-[#a6e3a1]/50 transition-colors">
+            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#313244] transition-colors flex items-center justify-between">
+              <span class="text-base sm:text-lg font-semibold text-[#a6e3a1]" data-en="Languages" data-es="Lenguajes">Languages</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#a6e3a1] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
             <div class="p-3 sm:p-4 pt-0">
               <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                <div class="bg-[#24283b] p-2 rounded border border-[#9ece6a]/30 text-center hover:border-[#9ece6a] transition-colors">
-                  <span class="text-sm font-medium text-[#9ece6a]">Python</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#a6e3a1]/30 text-center hover:border-[#a6e3a1] transition-colors">
+                  <span class="text-sm font-medium text-[#a6e3a1]">Python</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#7aa2f7]/30 text-center hover:border-[#7aa2f7] transition-colors">
-                  <span class="text-sm font-medium text-[#7aa2f7]">Node.js</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#89b4fa]/30 text-center hover:border-[#89b4fa] transition-colors">
+                  <span class="text-sm font-medium text-[#89b4fa]">Node.js</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#2ac3de]/30 text-center hover:border-[#2ac3de] transition-colors">
+                <div class="bg-[#313244] p-2 rounded border border-[#2ac3de]/30 text-center hover:border-[#2ac3de] transition-colors">
                   <span class="text-sm font-medium text-[#2ac3de]">Go</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#e0af68]/30 text-center hover:border-[#e0af68] transition-colors">
-                  <span class="text-sm font-medium text-[#e0af68]">JavaScript</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#fab387]/30 text-center hover:border-[#fab387] transition-colors">
+                  <span class="text-sm font-medium text-[#fab387]">JavaScript</span>
                 </div>
               </div>
             </div>
           </details>
 
           <!-- AI & Machine Learning -->
-          <details class="group bg-[#1a1b26] rounded-lg border border-[#bb9af7]/20 overflow-hidden">
-            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#24283b] transition-colors flex items-center justify-between">
-              <span class="text-base sm:text-lg font-semibold text-[#bb9af7]" data-en="AI & Machine Learning" data-es="IA y Machine Learning">AI & Machine Learning</span>
-              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#bb9af7] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <details class="group bg-[#1e1e2e] rounded-lg border border-[#cba6f7]/20 overflow-hidden">
+            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#313244] transition-colors flex items-center justify-between">
+              <span class="text-base sm:text-lg font-semibold text-[#cba6f7]" data-en="AI & Machine Learning" data-es="IA y Machine Learning">AI & Machine Learning</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#cba6f7] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
             <div class="p-3 sm:p-4 pt-0">
               <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                <div class="bg-[#24283b] p-2 rounded border border-[#bb9af7]/30 text-center hover:border-[#bb9af7] transition-colors">
-                  <span class="text-sm font-medium text-[#bb9af7]">LLMs</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#cba6f7]/30 text-center hover:border-[#cba6f7] transition-colors">
+                  <span class="text-sm font-medium text-[#cba6f7]">LLMs</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#f7768e]/30 text-center hover:border-[#f7768e] transition-colors">
-                  <span class="text-sm font-medium text-[#f7768e]">RAG</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#f38ba8]/30 text-center hover:border-[#f38ba8] transition-colors">
+                  <span class="text-sm font-medium text-[#f38ba8]">RAG</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#2ac3de]/30 text-center hover:border-[#2ac3de] transition-colors">
+                <div class="bg-[#313244] p-2 rounded border border-[#2ac3de]/30 text-center hover:border-[#2ac3de] transition-colors">
                   <span class="text-sm font-medium text-[#2ac3de]">Ollama</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#e0af68]/30 text-center hover:border-[#e0af68] transition-colors">
-                  <span class="text-sm font-medium text-[#e0af68]">Vector DB</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#fab387]/30 text-center hover:border-[#fab387] transition-colors">
+                  <span class="text-sm font-medium text-[#fab387]">Vector DB</span>
                 </div>
               </div>
             </div>
           </details>
 
           <!-- Backend & Frameworks -->
-          <details class="group bg-[#1a1b26] rounded-lg border border-[#7aa2f7]/20 overflow-hidden">
-            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#24283b] transition-colors flex items-center justify-between">
-              <span class="text-base sm:text-lg font-semibold text-[#7aa2f7]" data-en="Backend & Frameworks" data-es="Backend y Frameworks">Backend & Frameworks</span>
-              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#7aa2f7] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <details class="group bg-[#1e1e2e] rounded-lg border border-[#89b4fa]/20 overflow-hidden">
+            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#313244] transition-colors flex items-center justify-between">
+              <span class="text-base sm:text-lg font-semibold text-[#89b4fa]" data-en="Backend & Frameworks" data-es="Backend y Frameworks">Backend & Frameworks</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#89b4fa] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
             <div class="p-3 sm:p-4 pt-0">
               <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                <div class="bg-[#24283b] p-2 rounded border border-[#9ece6a]/30 text-center hover:border-[#9ece6a] transition-colors">
-                  <span class="text-sm font-medium text-[#9ece6a]">FastAPI</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#a6e3a1]/30 text-center hover:border-[#a6e3a1] transition-colors">
+                  <span class="text-sm font-medium text-[#a6e3a1]">FastAPI</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#7aa2f7]/30 text-center hover:border-[#7aa2f7] transition-colors">
-                  <span class="text-sm font-medium text-[#7aa2f7]">Express</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#89b4fa]/30 text-center hover:border-[#89b4fa] transition-colors">
+                  <span class="text-sm font-medium text-[#89b4fa]">Express</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#bb9af7]/30 text-center hover:border-[#bb9af7] transition-colors">
-                  <span class="text-sm font-medium text-[#bb9af7]">GraphQL</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#cba6f7]/30 text-center hover:border-[#cba6f7] transition-colors">
+                  <span class="text-sm font-medium text-[#cba6f7]">GraphQL</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#eb6f92]/30 text-center hover:border-[#eb6f92] transition-colors">
+                <div class="bg-[#313244] p-2 rounded border border-[#eb6f92]/30 text-center hover:border-[#eb6f92] transition-colors">
                   <span class="text-sm font-medium text-[#eb6f92]">Socket.io</span>
                 </div>
               </div>
@@ -203,31 +208,31 @@ import Layout from '../layouts/Layout.astro';
           </details>
 
           <!-- Databases & Storage -->
-          <details class="group bg-[#1a1b26] rounded-lg border border-[#f7768e]/20 overflow-hidden">
-            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#24283b] transition-colors flex items-center justify-between">
-              <span class="text-base sm:text-lg font-semibold text-[#f7768e]" data-en="Databases & Storage" data-es="Bases de Datos">Databases & Storage</span>
-              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#f7768e] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <details class="group bg-[#1e1e2e] rounded-lg border border-[#f38ba8]/20 overflow-hidden">
+            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#313244] transition-colors flex items-center justify-between">
+              <span class="text-base sm:text-lg font-semibold text-[#f38ba8]" data-en="Databases & Storage" data-es="Bases de Datos">Databases & Storage</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#f38ba8] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
             <div class="p-3 sm:p-4 pt-0">
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                <div class="bg-[#24283b] p-2 rounded border border-[#bb9af7]/30 text-center hover:border-[#bb9af7] transition-colors">
-                  <span class="text-sm font-medium text-[#bb9af7]">PostgreSQL</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#cba6f7]/30 text-center hover:border-[#cba6f7] transition-colors">
+                  <span class="text-sm font-medium text-[#cba6f7]">PostgreSQL</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#9ece6a]/30 text-center hover:border-[#9ece6a] transition-colors">
-                  <span class="text-sm font-medium text-[#9ece6a]">MongoDB</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#a6e3a1]/30 text-center hover:border-[#a6e3a1] transition-colors">
+                  <span class="text-sm font-medium text-[#a6e3a1]">MongoDB</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#f7768e]/30 text-center hover:border-[#f7768e] transition-colors">
-                  <span class="text-sm font-medium text-[#f7768e]">Redis</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#f38ba8]/30 text-center hover:border-[#f38ba8] transition-colors">
+                  <span class="text-sm font-medium text-[#f38ba8]">Redis</span>
                 </div>
               </div>
             </div>
           </details>
 
           <!-- DevOps & Infrastructure -->
-          <details class="group bg-[#1a1b26] rounded-lg border border-[#2ac3de]/20 overflow-hidden">
-            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#24283b] transition-colors flex items-center justify-between">
+          <details class="group bg-[#1e1e2e] rounded-lg border border-[#2ac3de]/20 overflow-hidden">
+            <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#313244] transition-colors flex items-center justify-between">
               <span class="text-base sm:text-lg font-semibold text-[#2ac3de]" data-en="DevOps & Infrastructure" data-es="DevOps e Infraestructura">DevOps & Infrastructure</span>
               <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2ac3de] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -235,13 +240,13 @@ import Layout from '../layouts/Layout.astro';
             </summary>
             <div class="p-3 sm:p-4 pt-0">
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                <div class="bg-[#24283b] p-2 rounded border border-[#2ac3de]/30 text-center hover:border-[#2ac3de] transition-colors">
+                <div class="bg-[#313244] p-2 rounded border border-[#2ac3de]/30 text-center hover:border-[#2ac3de] transition-colors">
                   <span class="text-sm font-medium text-[#2ac3de]">Docker</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#e0af68]/30 text-center hover:border-[#e0af68] transition-colors">
-                  <span class="text-sm font-medium text-[#e0af68]">Kafka</span>
+                <div class="bg-[#313244] p-2 rounded border border-[#fab387]/30 text-center hover:border-[#fab387] transition-colors">
+                  <span class="text-sm font-medium text-[#fab387]">Kafka</span>
                 </div>
-                <div class="bg-[#24283b] p-2 rounded border border-[#ff9e64]/30 text-center hover:border-[#ff9e64] transition-colors">
+                <div class="bg-[#313244] p-2 rounded border border-[#ff9e64]/30 text-center hover:border-[#ff9e64] transition-colors">
                   <span class="text-sm font-medium text-[#ff9e64]">NATS</span>
                 </div>
               </div>
@@ -252,18 +257,18 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#24283b] to-[#1f1d2e]">
+    <section id="projects" class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 bg-gradient-to-br from-[#1e1e2e] to-[#181825]">
       <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8 sm:mb-10 md:mb-12">
-          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="Projects" data-es="Proyectos">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12 sm:mb-14">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#89b4fa] to-[#cba6f7] bg-clip-text text-transparent" data-en="Projects" data-es="Proyectos">
             Projects
           </h2>
           <!-- Mode Toggle -->
-          <div class="flex gap-1 sm:gap-2 bg-[#1a1b26] rounded-lg p-1 border border-[#7aa2f7]/20 w-full sm:w-auto">
-            <button id="terminal-mode-btn" class="flex-1 sm:flex-none px-3 sm:px-4 py-1.5 sm:py-2 rounded bg-[#7aa2f7] text-[#1a1b26] text-sm sm:text-base font-semibold transition">
+          <div class="flex gap-2 bg-[#313244] rounded-lg p-1.5 border-2 border-[#89b4fa]/30 w-full sm:w-auto shadow-lg">
+            <button id="terminal-mode-btn" class="flex-1 sm:flex-none px-4 sm:px-5 py-2 sm:py-2.5 rounded-md bg-[#89b4fa] text-[#11111b] text-sm sm:text-base font-bold transition-all hover:bg-[#74c7ec] shadow-md">
               <span data-en="Terminal" data-es="Terminal">Terminal</span>
             </button>
-            <button id="grid-mode-btn" class="flex-1 sm:flex-none px-3 sm:px-4 py-1.5 sm:py-2 rounded text-[#7aa2f7] hover:bg-[#7aa2f7]/10 text-sm sm:text-base font-semibold transition">
+            <button id="grid-mode-btn" class="flex-1 sm:flex-none px-4 sm:px-5 py-2 sm:py-2.5 rounded-md text-[#cdd6f4] hover:bg-[#45475a] text-sm sm:text-base font-bold transition-all">
               <span data-en="Grid" data-es="Cuadrícula">Grid</span>
             </button>
           </div>
@@ -271,28 +276,28 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Terminal Mode -->
         <div id="terminal-view" class="terminal-container">
-          <div class="bg-[#1a1b26] rounded-lg border border-[#7aa2f7]/30 overflow-hidden shadow-2xl">
+          <div class="bg-[#1e1e2e] rounded-lg border border-[#89b4fa]/30 overflow-hidden shadow-2xl">
             <!-- Terminal Header -->
-            <div class="bg-[#24283b] px-3 sm:px-4 py-2 border-b border-[#7aa2f7]/20 flex items-center gap-2">
+            <div class="bg-[#313244] px-3 sm:px-4 py-2 border-b border-[#89b4fa]/20 flex items-center gap-2">
               <div class="flex gap-1.5 sm:gap-2">
-                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#f7768e]"></div>
-                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#e0af68]"></div>
-                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#9ece6a]"></div>
+                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#f38ba8]"></div>
+                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#fab387]"></div>
+                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#a6e3a1]"></div>
               </div>
-              <span class="ml-2 sm:ml-4 text-[#565f89] text-xs sm:text-sm font-mono">projects@portfolio:~</span>
+              <span class="ml-2 sm:ml-4 text-[#6c7086] text-xs sm:text-sm font-mono">projects@portfolio:~</span>
             </div>
 
             <!-- Terminal Body -->
             <div class="p-4 sm:p-5 md:p-6 font-mono text-xs sm:text-sm">
               <!-- Welcome Message -->
               <div class="mb-3 sm:mb-4">
-                <p class="text-[#9ece6a] text-sm sm:text-base">Welcome to PortfolioOS 2.0 - Interactive Projects Terminal!</p>
-                <p class="text-[#565f89] mt-2 text-xs sm:text-sm">Type <span class="text-[#7aa2f7]">"help"</span> for commands, <span class="text-[#7aa2f7]">"tree"</span> for project structure</p>
-                <p class="text-[#565f89] text-xs sm:text-sm">💡 Quick start:</p>
-                <p class="text-[#7aa2f7] ml-3 sm:ml-4 text-xs sm:text-sm">• cd ai <span class="text-[#565f89]">- Navigate to AI projects</span></p>
-                <p class="text-[#7aa2f7] ml-3 sm:ml-4 text-xs sm:text-sm">• ls <span class="text-[#565f89]">- List projects in current directory</span></p>
-                <p class="text-[#7aa2f7] ml-3 sm:ml-4 text-xs sm:text-sm">• cat ghostwriter <span class="text-[#565f89]">- View project details</span></p>
-                <p class="text-[#565f89] mt-2 text-xs sm:text-sm">⚡ Use TAB for autocomplete, ↑↓ for history, Ctrl+L to clear</p>
+                <p class="text-[#a6e3a1] text-sm sm:text-base">Welcome to PortfolioOS 2.0 - Interactive Projects Terminal!</p>
+                <p class="text-[#6c7086] mt-2 text-xs sm:text-sm">Type <span class="text-[#89b4fa]">"help"</span> for commands, <span class="text-[#89b4fa]">"tree"</span> for project structure</p>
+                <p class="text-[#6c7086] text-xs sm:text-sm">💡 Quick start:</p>
+                <p class="text-[#89b4fa] ml-3 sm:ml-4 text-xs sm:text-sm">• cd ai <span class="text-[#6c7086]">- Navigate to AI projects</span></p>
+                <p class="text-[#89b4fa] ml-3 sm:ml-4 text-xs sm:text-sm">• ls <span class="text-[#6c7086]">- List projects in current directory</span></p>
+                <p class="text-[#89b4fa] ml-3 sm:ml-4 text-xs sm:text-sm">• cat ghostwriter <span class="text-[#6c7086]">- View project details</span></p>
+                <p class="text-[#6c7086] mt-2 text-xs sm:text-sm">⚡ Use TAB for autocomplete, ↑↓ for history, Ctrl+L to clear</p>
               </div>
 
               <!-- Terminal Output -->
@@ -300,11 +305,11 @@ import Layout from '../layouts/Layout.astro';
 
               <!-- Terminal Input -->
               <div class="flex items-center gap-2">
-                <span class="text-[#9ece6a]">$</span>
+                <span class="text-[#a6e3a1]">$</span>
                 <input
                   type="text"
                   id="terminal-input"
-                  class="flex-1 bg-transparent border-none outline-none text-[#c0caf5] font-mono text-xs sm:text-sm"
+                  class="flex-1 bg-transparent border-none outline-none text-[#cdd6f4] font-mono text-xs sm:text-sm"
                   placeholder="Type a command..."
                   autocomplete="off"
                 />
@@ -314,17 +319,17 @@ import Layout from '../layouts/Layout.astro';
 
           <!-- Quick Filters -->
           <div class="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
-            <span class="text-[#565f89] text-xs sm:text-sm" data-en="Quick filters:" data-es="Filtros rápidos:">Quick filters:</span>
-            <button class="filter-btn px-2 sm:px-3 py-1 rounded bg-[#bb9af7]/20 border border-[#bb9af7]/40 text-[#bb9af7] hover:bg-[#bb9af7]/30 transition text-xs sm:text-sm" data-category="ai">
+            <span class="text-[#6c7086] text-xs sm:text-sm" data-en="Quick filters:" data-es="Filtros rápidos:">Quick filters:</span>
+            <button class="filter-btn px-2 sm:px-3 py-1 rounded bg-[#cba6f7]/20 border border-[#cba6f7]/40 text-[#cba6f7] hover:bg-[#cba6f7]/30 transition text-xs sm:text-sm" data-category="ai">
               AI & Innovation
             </button>
-            <button class="filter-btn px-2 sm:px-3 py-1 rounded bg-[#9ece6a]/20 border border-[#9ece6a]/40 text-[#9ece6a] hover:bg-[#9ece6a]/30 transition text-xs sm:text-sm" data-category="distributed">
+            <button class="filter-btn px-2 sm:px-3 py-1 rounded bg-[#a6e3a1]/20 border border-[#a6e3a1]/40 text-[#a6e3a1] hover:bg-[#a6e3a1]/30 transition text-xs sm:text-sm" data-category="distributed">
               Distributed Systems
             </button>
-            <button class="filter-btn px-2 sm:px-3 py-1 rounded bg-[#7aa2f7]/20 border border-[#7aa2f7]/40 text-[#7aa2f7] hover:bg-[#7aa2f7]/30 transition text-xs sm:text-sm" data-category="api">
+            <button class="filter-btn px-2 sm:px-3 py-1 rounded bg-[#89b4fa]/20 border border-[#89b4fa]/40 text-[#89b4fa] hover:bg-[#89b4fa]/30 transition text-xs sm:text-sm" data-category="api">
               APIs & Web
             </button>
-            <button class="filter-btn px-2 sm:px-3 py-1 rounded bg-[#f7768e]/20 border border-[#f7768e]/40 text-[#f7768e] hover:bg-[#f7768e]/30 transition text-xs sm:text-sm" data-filter="all">
+            <button class="filter-btn px-2 sm:px-3 py-1 rounded bg-[#f38ba8]/20 border border-[#f38ba8]/40 text-[#f38ba8] hover:bg-[#f38ba8]/30 transition text-xs sm:text-sm" data-filter="all">
               <span data-en="Show All" data-es="Mostrar Todo">Show All</span>
             </button>
           </div>
@@ -333,186 +338,186 @@ import Layout from '../layouts/Layout.astro';
         <!-- Grid Mode -->
         <div id="grid-view" class="hidden space-y-2 sm:space-y-3">
         <!-- AI & Innovation Category -->
-        <details class="group bg-[#1a1b26] rounded-lg border border-[#bb9af7]/20 overflow-hidden" open>
-          <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#24283b] transition-colors flex items-center justify-between">
-            <span class="text-base sm:text-lg font-semibold text-[#bb9af7]" data-en="AI & Innovation" data-es="IA e Innovación">AI & Innovation</span>
-            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#bb9af7] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <details class="group bg-[#1e1e2e] rounded-lg border border-[#cba6f7]/20 overflow-hidden" open>
+          <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#313244] transition-colors flex items-center justify-between">
+            <span class="text-base sm:text-lg font-semibold text-[#cba6f7]" data-en="AI & Innovation" data-es="IA e Innovación">AI & Innovation</span>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#cba6f7] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
           <div class="p-3 sm:p-4 pt-0 space-y-3 sm:space-y-4">
             <!-- GhostWriter -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#bb9af7]/20 hover:border-[#bb9af7]/50 transition-colors">
-              <h4 class="text-base sm:text-lg font-semibold text-[#bb9af7] mb-2" data-en="GhostWriter – AI Code Clone & Auto-Committer" data-es="GhostWriter – Clon de Código IA y Auto-Commits">GhostWriter – AI Code Clone & Auto-Committer</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Personalized AI coding assistant trained exclusively on your commit history (10k+ lines) using CodeLlama 34B + LoRA fine-tuning. Generates code diffs in your exact style: variable names, comments, test structure, and commit message tone. Includes automated PR creation with 97%+ confidence threshold and Telegram notifications. Fully containerized with Docker for zero local dependencies." data-es="Asistente de codificación IA personalizado entrenado exclusivamente con tu historial de commits (10k+ líneas) usando CodeLlama 34B + fine-tuning LoRA. Genera diffs de código en tu estilo exacto: nombres de variables, comentarios, estructura de tests y tono de mensajes de commit. Incluye creación automática de PRs con umbral de confianza del 97%+ y notificaciones por Telegram. Totalmente containerizado con Docker sin dependencias locales.">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#cba6f7]/20 hover:border-[#cba6f7]/50 transition-colors">
+              <h4 class="text-base sm:text-lg font-semibold text-[#cba6f7] mb-2" data-en="GhostWriter – AI Code Clone & Auto-Committer" data-es="GhostWriter – Clon de Código IA y Auto-Commits">GhostWriter – AI Code Clone & Auto-Committer</h4>
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Personalized AI coding assistant trained exclusively on your commit history (10k+ lines) using CodeLlama 34B + LoRA fine-tuning. Generates code diffs in your exact style: variable names, comments, test structure, and commit message tone. Includes automated PR creation with 97%+ confidence threshold and Telegram notifications. Fully containerized with Docker for zero local dependencies." data-es="Asistente de codificación IA personalizado entrenado exclusivamente con tu historial de commits (10k+ líneas) usando CodeLlama 34B + fine-tuning LoRA. Genera diffs de código en tu estilo exacto: nombres de variables, comentarios, estructura de tests y tono de mensajes de commit. Incluye creación automática de PRs con umbral de confianza del 97%+ y notificaciones por Telegram. Totalmente containerizado con Docker sin dependencias locales.">
                 Personalized AI coding assistant trained exclusively on your commit history (10k+ lines) using CodeLlama 34B + LoRA fine-tuning. Generates code diffs in your exact style: variable names, comments, test structure, and commit message tone. Includes automated PR creation with 97%+ confidence threshold and Telegram notifications. Fully containerized with Docker for zero local dependencies.
               </p>
               <div class="flex flex-wrap gap-1.5">
-                <span class="bg-[#9ece6a]/10 border border-[#9ece6a]/30 px-2 py-0.5 rounded text-xs text-[#9ece6a]">Python</span>
-                <span class="bg-[#bb9af7]/10 border border-[#bb9af7]/30 px-2 py-0.5 rounded text-xs text-[#bb9af7]">CodeLlama 34B</span>
-                <span class="bg-[#7aa2f7]/10 border border-[#7aa2f7]/30 px-2 py-0.5 rounded text-xs text-[#7aa2f7]">LoRA</span>
+                <span class="bg-[#a6e3a1]/10 border border-[#a6e3a1]/30 px-2 py-0.5 rounded text-xs text-[#a6e3a1]">Python</span>
+                <span class="bg-[#cba6f7]/10 border border-[#cba6f7]/30 px-2 py-0.5 rounded text-xs text-[#cba6f7]">CodeLlama 34B</span>
+                <span class="bg-[#89b4fa]/10 border border-[#89b4fa]/30 px-2 py-0.5 rounded text-xs text-[#89b4fa]">LoRA</span>
                 <span class="bg-[#2ac3de]/10 border border-[#2ac3de]/30 px-2 py-0.5 rounded text-xs text-[#2ac3de]">Docker</span>
-                <span class="bg-[#e0af68]/10 border border-[#e0af68]/30 px-2 py-0.5 rounded text-xs text-[#e0af68]">Telegram</span>
+                <span class="bg-[#fab387]/10 border border-[#fab387]/30 px-2 py-0.5 rounded text-xs text-[#fab387]">Telegram</span>
               </div>
             </div>
 
             <!-- DeadCode Funeral -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#f7768e]/20 hover:border-[#f7768e]/50 transition-colors">
-              <h4 class="text-base sm:text-lg font-semibold text-[#f7768e] mb-2" data-en="DeadCode Funeral – Ceremonial Code Cleanup" data-es="DeadCode Funeral – Limpieza Ceremonial de Código">DeadCode Funeral – Ceremonial Code Cleanup</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Automated dead code detection system that scans monorepos to find unused functions and modules. Generates AI-powered obituaries (solemn or sarcastic) and publishes them to Slack: 'Today we say goodbye to formatLegacyUser() which served faithfully from 2019 to 2024. It left 3 orphaned children and 400 lines of technical debt.' Creates automated branches, removes code, updates tests, and opens PRs. Combines advanced static analysis (Pyright + custom graph) with emotional content generation and git automation." data-es="Sistema automatizado de detección de código muerto que escanea monorepos para encontrar funciones y módulos sin usar. Genera obituarios impulsados por IA (solemnes o sarcásticos) y los publica en Slack: 'Hoy despedimos a formatLegacyUser() que sirvió fielmente desde 2019 hasta 2024. Dejó 3 hijos huérfanos y 400 líneas de deuda técnica.' Crea branches automáticas, elimina código, actualiza tests y abre PRs. Combina análisis estático avanzado (Pyright + grafo personalizado) con generación de contenido emocional y automatización git.">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#f38ba8]/20 hover:border-[#f38ba8]/50 transition-colors">
+              <h4 class="text-base sm:text-lg font-semibold text-[#f38ba8] mb-2" data-en="DeadCode Funeral – Ceremonial Code Cleanup" data-es="DeadCode Funeral – Limpieza Ceremonial de Código">DeadCode Funeral – Ceremonial Code Cleanup</h4>
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Automated dead code detection system that scans monorepos to find unused functions and modules. Generates AI-powered obituaries (solemn or sarcastic) and publishes them to Slack: 'Today we say goodbye to formatLegacyUser() which served faithfully from 2019 to 2024. It left 3 orphaned children and 400 lines of technical debt.' Creates automated branches, removes code, updates tests, and opens PRs. Combines advanced static analysis (Pyright + custom graph) with emotional content generation and git automation." data-es="Sistema automatizado de detección de código muerto que escanea monorepos para encontrar funciones y módulos sin usar. Genera obituarios impulsados por IA (solemnes o sarcásticos) y los publica en Slack: 'Hoy despedimos a formatLegacyUser() que sirvió fielmente desde 2019 hasta 2024. Dejó 3 hijos huérfanos y 400 líneas de deuda técnica.' Crea branches automáticas, elimina código, actualiza tests y abre PRs. Combina análisis estático avanzado (Pyright + grafo personalizado) con generación de contenido emocional y automatización git.">
                 Automated dead code detection system that scans monorepos to find unused functions and modules. Generates AI-powered obituaries (solemn or sarcastic) and publishes them to Slack. Creates automated branches, removes code, updates tests, and opens PRs. Combines advanced static analysis (Pyright + custom graph) with emotional content generation and git automation.
               </p>
               <div class="flex flex-wrap gap-1.5">
-                <span class="bg-[#9ece6a]/10 border border-[#9ece6a]/30 px-2 py-0.5 rounded text-xs text-[#9ece6a]">Python</span>
-                <span class="bg-[#7aa2f7]/10 border border-[#7aa2f7]/30 px-2 py-0.5 rounded text-xs text-[#7aa2f7]">Pyright</span>
-                <span class="bg-[#bb9af7]/10 border border-[#bb9af7]/30 px-2 py-0.5 rounded text-xs text-[#bb9af7]">AI</span>
+                <span class="bg-[#a6e3a1]/10 border border-[#a6e3a1]/30 px-2 py-0.5 rounded text-xs text-[#a6e3a1]">Python</span>
+                <span class="bg-[#89b4fa]/10 border border-[#89b4fa]/30 px-2 py-0.5 rounded text-xs text-[#89b4fa]">Pyright</span>
+                <span class="bg-[#cba6f7]/10 border border-[#cba6f7]/30 px-2 py-0.5 rounded text-xs text-[#cba6f7]">AI</span>
                 <span class="bg-[#2ac3de]/10 border border-[#2ac3de]/30 px-2 py-0.5 rounded text-xs text-[#2ac3de]">Slack</span>
               </div>
             </div>
 
             <!-- LifeChain -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#2ac3de]/20 hover:border-[#2ac3de]/50 transition-colors">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#2ac3de]/20 hover:border-[#2ac3de]/50 transition-colors">
               <h4 class="text-base sm:text-lg font-semibold text-[#2ac3de] mb-2" data-en="LifeChain – LangChain for Your Life" data-es="LifeChain – LangChain para Tu Vida">LifeChain – LangChain for Your Life</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Personal life knowledge graph that lives in your terminal and remembers EVERYTHING you've done. Every command, error, git commit, meeting (Whisper transcription), Slack message goes into vector DB + knowledge graphs. Query your digital life: 'What project used passkeys 8 months ago?', 'What solution did I use last time I had Redis deadlock?', 'Show me complete context of why I made this architecture decision in March'. Uses local models (Llama3.1 70B + Ollama) for total privacy. Ultra-personal RAG with complete digital life scraping." data-es="Grafo de conocimiento de vida personal que vive en tu terminal y recuerda TODO lo que has hecho. Cada comando, error, git commit, reunión (transcripción Whisper), mensaje de Slack va a vector DB + grafos de conocimiento. Consulta tu vida digital: '¿Qué proyecto usó passkeys hace 8 meses?', '¿Qué solución usé la última vez con deadlock en Redis?', 'Muéstrame contexto completo de por qué tomé esta decisión de arquitectura en marzo'. Usa modelos locales (Llama3.1 70B + Ollama) para privacidad total. RAG ultra-personal con scraping completo de vida digital.">
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Personal life knowledge graph that lives in your terminal and remembers EVERYTHING you've done. Every command, error, git commit, meeting (Whisper transcription), Slack message goes into vector DB + knowledge graphs. Query your digital life: 'What project used passkeys 8 months ago?', 'What solution did I use last time I had Redis deadlock?', 'Show me complete context of why I made this architecture decision in March'. Uses local models (Llama3.1 70B + Ollama) for total privacy. Ultra-personal RAG with complete digital life scraping." data-es="Grafo de conocimiento de vida personal que vive en tu terminal y recuerda TODO lo que has hecho. Cada comando, error, git commit, reunión (transcripción Whisper), mensaje de Slack va a vector DB + grafos de conocimiento. Consulta tu vida digital: '¿Qué proyecto usó passkeys hace 8 meses?', '¿Qué solución usé la última vez con deadlock en Redis?', 'Muéstrame contexto completo de por qué tomé esta decisión de arquitectura en marzo'. Usa modelos locales (Llama3.1 70B + Ollama) para privacidad total. RAG ultra-personal con scraping completo de vida digital.">
                 Personal life knowledge graph that lives in your terminal and remembers EVERYTHING. Every command, error, git commit, meeting, Slack message goes into vector DB + knowledge graphs. Query your digital life with local models (Llama3.1 70B + Ollama) for total privacy.
               </p>
               <div class="flex flex-wrap gap-1.5">
-                <span class="bg-[#9ece6a]/10 border border-[#9ece6a]/30 px-2 py-0.5 rounded text-xs text-[#9ece6a]">Python</span>
-                <span class="bg-[#bb9af7]/10 border border-[#bb9af7]/30 px-2 py-0.5 rounded text-xs text-[#bb9af7]">Llama3.1 70B</span>
-                <span class="bg-[#f7768e]/10 border border-[#f7768e]/30 px-2 py-0.5 rounded text-xs text-[#f7768e]">RAG</span>
+                <span class="bg-[#a6e3a1]/10 border border-[#a6e3a1]/30 px-2 py-0.5 rounded text-xs text-[#a6e3a1]">Python</span>
+                <span class="bg-[#cba6f7]/10 border border-[#cba6f7]/30 px-2 py-0.5 rounded text-xs text-[#cba6f7]">Llama3.1 70B</span>
+                <span class="bg-[#f38ba8]/10 border border-[#f38ba8]/30 px-2 py-0.5 rounded text-xs text-[#f38ba8]">RAG</span>
                 <span class="bg-[#2ac3de]/10 border border-[#2ac3de]/30 px-2 py-0.5 rounded text-xs text-[#2ac3de]">Vector DB</span>
               </div>
             </div>
 
             <!-- RepoTimeMachine -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#ff9e64]/20 hover:border-[#ff9e64]/50 transition-colors">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#ff9e64]/20 hover:border-[#ff9e64]/50 transition-colors">
               <h4 class="text-base sm:text-lg font-semibold text-[#ff9e64] mb-2" data-en="RepoTimeMachine – Time Travel for Repositories" data-es="RepoTimeMachine – Viajes en el Tiempo para Repositorios">RepoTimeMachine – Time Travel for Repositories</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Interactive terminal-based repository explorer that reconstructs commit history as a 3D movie using Kitty/Ghostty graphics protocol. Navigate through code versions like a Doom-style game (WASD controls), with an LLM narrator that reconstructs author intent from commits and diffs. Features AI-powered conversations with simulated past developers based on their commit patterns and issue history." data-es="Explorador interactivo de repositorios basado en terminal que reconstruye el historial de commits como una película en 3D usando el protocolo gráfico de Kitty/Ghostty. Navega por versiones de código como un juego estilo Doom (controles WASD), con un narrador LLM que reconstruye la intención del autor a partir de commits y diffs. Incluye conversaciones impulsadas por IA con desarrolladores del pasado simulados basados en sus patrones de commits e historial de issues.">
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Interactive terminal-based repository explorer that reconstructs commit history as a 3D movie using Kitty/Ghostty graphics protocol. Navigate through code versions like a Doom-style game (WASD controls), with an LLM narrator that reconstructs author intent from commits and diffs. Features AI-powered conversations with simulated past developers based on their commit patterns and issue history." data-es="Explorador interactivo de repositorios basado en terminal que reconstruye el historial de commits como una película en 3D usando el protocolo gráfico de Kitty/Ghostty. Navega por versiones de código como un juego estilo Doom (controles WASD), con un narrador LLM que reconstruye la intención del autor a partir de commits y diffs. Incluye conversaciones impulsadas por IA con desarrolladores del pasado simulados basados en sus patrones de commits e historial de issues.">
                 Interactive terminal-based repository explorer that reconstructs commit history as a 3D movie using Kitty/Ghostty graphics protocol. Navigate through code versions like a Doom-style game (WASD controls), with an LLM narrator.
               </p>
               <div class="flex flex-wrap gap-1.5">
-                <span class="bg-[#9ece6a]/10 border border-[#9ece6a]/30 px-2 py-0.5 rounded text-xs text-[#9ece6a]">Python</span>
-                <span class="bg-[#7aa2f7]/10 border border-[#7aa2f7]/30 px-2 py-0.5 rounded text-xs text-[#7aa2f7]">LLM</span>
+                <span class="bg-[#a6e3a1]/10 border border-[#a6e3a1]/30 px-2 py-0.5 rounded text-xs text-[#a6e3a1]">Python</span>
+                <span class="bg-[#89b4fa]/10 border border-[#89b4fa]/30 px-2 py-0.5 rounded text-xs text-[#89b4fa]">LLM</span>
                 <span class="bg-[#2ac3de]/10 border border-[#2ac3de]/30 px-2 py-0.5 rounded text-xs text-[#2ac3de]">3D</span>
                 <span class="bg-[#ff9e64]/10 border border-[#ff9e64]/30 px-2 py-0.5 rounded text-xs text-[#ff9e64]">TTS</span>
               </div>
             </div>
 
             <!-- Prompt-to-Infra -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#7dcfff]/20 hover:border-[#7dcfff]/50 transition-colors">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#7dcfff]/20 hover:border-[#7dcfff]/50 transition-colors">
               <h4 class="text-base sm:text-lg font-semibold text-[#7dcfff] mb-2" data-en="Prompt-to-Infra – AI Infrastructure Generator" data-es="Prompt-to-Infra – Generador de Infraestructura IA">Prompt-to-Infra – AI Infrastructure Generator</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Write prompts in natural language and get real infrastructure code. Generates complete Terraform modules, Helm charts, Dockerfiles, GitHub Actions workflows, and alert rules. Uses Claude 3.5 Sonnet with advanced tool-calling and your own infrastructure history as RAG for context. Opens pull requests automatically. Example: 'Go service for Stripe webhooks with signature validation, Postgres partitions by month, Prometheus metrics, K8s canary deployment, PagerDuty alerts for latency > 200ms' → generates everything. The future of DevOps automation." data-es="Escribe prompts en lenguaje natural y obtén código de infraestructura real. Genera módulos completos de Terraform, Helm charts, Dockerfiles, workflows de GitHub Actions y reglas de alerta. Usa Claude 3.5 Sonnet con tool-calling avanzado y tu propio historial de infraestructura como RAG para contexto. Abre pull requests automáticamente. Ejemplo: 'Servicio Go para webhooks de Stripe con validación de firmas, particiones de Postgres por mes, métricas Prometheus, canary deployment en K8s, alertas PagerDuty para latencia > 200ms' → genera todo. El futuro de la automatización DevOps.">
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Write prompts in natural language and get real infrastructure code. Generates complete Terraform modules, Helm charts, Dockerfiles, GitHub Actions workflows, and alert rules. Uses Claude 3.5 Sonnet with advanced tool-calling and your own infrastructure history as RAG for context. Opens pull requests automatically. Example: 'Go service for Stripe webhooks with signature validation, Postgres partitions by month, Prometheus metrics, K8s canary deployment, PagerDuty alerts for latency > 200ms' → generates everything. The future of DevOps automation." data-es="Escribe prompts en lenguaje natural y obtén código de infraestructura real. Genera módulos completos de Terraform, Helm charts, Dockerfiles, workflows de GitHub Actions y reglas de alerta. Usa Claude 3.5 Sonnet con tool-calling avanzado y tu propio historial de infraestructura como RAG para contexto. Abre pull requests automáticamente. Ejemplo: 'Servicio Go para webhooks de Stripe con validación de firmas, particiones de Postgres por mes, métricas Prometheus, canary deployment en K8s, alertas PagerDuty para latencia > 200ms' → genera todo. El futuro de la automatización DevOps.">
                 Write prompts in natural language and get real infrastructure code. Generates complete Terraform modules, Helm charts, Dockerfiles, GitHub Actions workflows, and alert rules. Uses Claude 3.5 Sonnet with advanced tool-calling and your own infrastructure history as RAG. Opens PRs automatically. The future of DevOps automation.
               </p>
               <div class="flex flex-wrap gap-1.5">
-                <span class="bg-[#bb9af7]/10 border border-[#bb9af7]/30 px-2 py-0.5 rounded text-xs text-[#bb9af7]">Claude 3.5</span>
-                <span class="bg-[#7aa2f7]/10 border border-[#7aa2f7]/30 px-2 py-0.5 rounded text-xs text-[#7aa2f7]">Terraform</span>
+                <span class="bg-[#cba6f7]/10 border border-[#cba6f7]/30 px-2 py-0.5 rounded text-xs text-[#cba6f7]">Claude 3.5</span>
+                <span class="bg-[#89b4fa]/10 border border-[#89b4fa]/30 px-2 py-0.5 rounded text-xs text-[#89b4fa]">Terraform</span>
                 <span class="bg-[#2ac3de]/10 border border-[#2ac3de]/30 px-2 py-0.5 rounded text-xs text-[#2ac3de]">Helm</span>
-                <span class="bg-[#9ece6a]/10 border border-[#9ece6a]/30 px-2 py-0.5 rounded text-xs text-[#9ece6a]">Kubernetes</span>
-                <span class="bg-[#e0af68]/10 border border-[#e0af68]/30 px-2 py-0.5 rounded text-xs text-[#e0af68]">GitHub Actions</span>
-                <span class="bg-[#f7768e]/10 border border-[#f7768e]/30 px-2 py-0.5 rounded text-xs text-[#f7768e]">RAG</span>
+                <span class="bg-[#a6e3a1]/10 border border-[#a6e3a1]/30 px-2 py-0.5 rounded text-xs text-[#a6e3a1]">Kubernetes</span>
+                <span class="bg-[#fab387]/10 border border-[#fab387]/30 px-2 py-0.5 rounded text-xs text-[#fab387]">GitHub Actions</span>
+                <span class="bg-[#f38ba8]/10 border border-[#f38ba8]/30 px-2 py-0.5 rounded text-xs text-[#f38ba8]">RAG</span>
               </div>
             </div>
           </div>
         </details>
 
         <!-- Distributed Systems & Backend Category -->
-        <details class="group bg-[#1a1b26] rounded-lg border border-[#9ece6a]/20 overflow-hidden" open>
-          <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#24283b] transition-colors flex items-center justify-between">
-            <span class="text-base sm:text-lg font-semibold text-[#9ece6a]" data-en="Distributed Systems & Backend" data-es="Sistemas Distribuidos y Backend">Distributed Systems & Backend</span>
-            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#9ece6a] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <details class="group bg-[#1e1e2e] rounded-lg border border-[#a6e3a1]/20 overflow-hidden" open>
+          <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#313244] transition-colors flex items-center justify-between">
+            <span class="text-base sm:text-lg font-semibold text-[#a6e3a1]" data-en="Distributed Systems & Backend" data-es="Sistemas Distribuidos y Backend">Distributed Systems & Backend</span>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#a6e3a1] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
           <div class="p-3 sm:p-4 pt-0 space-y-3 sm:space-y-4">
             <!-- PayFlow -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#9ece6a]/20 hover:border-[#9ece6a]/50 transition-colors">
-              <h4 class="text-base sm:text-lg font-semibold text-[#9ece6a] mb-2" data-en="PayFlow – Distributed Payment Engine" data-es="PayFlow – Motor de Pagos Distribuido">PayFlow – Distributed Payment Engine</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Distributed payment processing system with event-driven architecture. Go microservice handles high-performance webhook processing from Stripe/PayPal with async events via NATS/Kafka. Python microservice manages retries, dead-letter queues, reconciliation, and basic fraud detection. Real-time dashboard with WebSocket for transaction monitoring." data-es="Sistema de procesamiento de pagos distribuido con arquitectura event-driven. Microservicio en Go maneja webhooks de alto rendimiento desde Stripe/PayPal con eventos asíncronos vía NATS/Kafka. Microservicio en Python gestiona reintentos, colas de errores, reconciliación y detección básica de fraude. Dashboard en tiempo real con WebSocket para monitoreo de transacciones.">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#a6e3a1]/20 hover:border-[#a6e3a1]/50 transition-colors">
+              <h4 class="text-base sm:text-lg font-semibold text-[#a6e3a1] mb-2" data-en="PayFlow – Distributed Payment Engine" data-es="PayFlow – Motor de Pagos Distribuido">PayFlow – Distributed Payment Engine</h4>
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Distributed payment processing system with event-driven architecture. Go microservice handles high-performance webhook processing from Stripe/PayPal with async events via NATS/Kafka. Python microservice manages retries, dead-letter queues, reconciliation, and basic fraud detection. Real-time dashboard with WebSocket for transaction monitoring." data-es="Sistema de procesamiento de pagos distribuido con arquitectura event-driven. Microservicio en Go maneja webhooks de alto rendimiento desde Stripe/PayPal con eventos asíncronos vía NATS/Kafka. Microservicio en Python gestiona reintentos, colas de errores, reconciliación y detección básica de fraude. Dashboard en tiempo real con WebSocket para monitoreo de transacciones.">
                 Distributed payment processing system with event-driven architecture. Go microservice handles high-performance webhook processing with NATS/Kafka. Python microservice manages retries, dead-letter queues, and basic fraud detection.
               </p>
               <div class="flex flex-wrap gap-1.5 mb-3">
                 <span class="bg-[#2ac3de]/10 border border-[#2ac3de]/30 px-2 py-0.5 rounded text-xs text-[#2ac3de]">Go</span>
-                <span class="bg-[#9ece6a]/10 border border-[#9ece6a]/30 px-2 py-0.5 rounded text-xs text-[#9ece6a]">Python</span>
-                <span class="bg-[#e0af68]/10 border border-[#e0af68]/30 px-2 py-0.5 rounded text-xs text-[#e0af68]">NATS</span>
-                <span class="bg-[#bb9af7]/10 border border-[#bb9af7]/30 px-2 py-0.5 rounded text-xs text-[#bb9af7]">PostgreSQL</span>
+                <span class="bg-[#a6e3a1]/10 border border-[#a6e3a1]/30 px-2 py-0.5 rounded text-xs text-[#a6e3a1]">Python</span>
+                <span class="bg-[#fab387]/10 border border-[#fab387]/30 px-2 py-0.5 rounded text-xs text-[#fab387]">NATS</span>
+                <span class="bg-[#cba6f7]/10 border border-[#cba6f7]/30 px-2 py-0.5 rounded text-xs text-[#cba6f7]">PostgreSQL</span>
               </div>
-              <a href="https://github.com/yeshua89/PyFlow" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#24283b] border border-[#9ece6a]/30 hover:border-[#9ece6a] rounded text-xs text-[#9ece6a] hover:bg-[#9ece6a]/10 transition-colors">
+              <a href="https://github.com/yeshua89/PyFlow" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#313244] border border-[#a6e3a1]/30 hover:border-[#a6e3a1] rounded text-xs text-[#a6e3a1] hover:bg-[#a6e3a1]/10 transition-colors">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.840 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.430.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 <span data-en="View Code" data-es="Ver Código">View Code</span>
               </a>
             </div>
 
             <!-- Authentication Microservice -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#bb9af7]/20 hover:border-[#bb9af7]/50 transition-colors">
-              <h4 class="text-base sm:text-lg font-semibold text-[#bb9af7] mb-2" data-en="Authentication Microservice" data-es="Microservicio de Autenticación">Authentication Microservice</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Authentication service with OAuth2, JWT, and refresh tokens. Implemented with microservices architecture." data-es="Servicio de autenticación con OAuth2, JWT y refresh tokens. Implementado con arquitectura de microservicios.">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#cba6f7]/20 hover:border-[#cba6f7]/50 transition-colors">
+              <h4 class="text-base sm:text-lg font-semibold text-[#cba6f7] mb-2" data-en="Authentication Microservice" data-es="Microservicio de Autenticación">Authentication Microservice</h4>
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Authentication service with OAuth2, JWT, and refresh tokens. Implemented with microservices architecture." data-es="Servicio de autenticación con OAuth2, JWT y refresh tokens. Implementado con arquitectura de microservicios.">
                 Authentication service with OAuth2, JWT, and refresh tokens. Implemented with microservices architecture.
               </p>
               <div class="flex flex-wrap gap-1.5 mb-3">
-                <span class="bg-[#9ece6a]/10 border border-[#9ece6a]/30 px-2 py-0.5 rounded text-xs text-[#9ece6a]">Python</span>
+                <span class="bg-[#a6e3a1]/10 border border-[#a6e3a1]/30 px-2 py-0.5 rounded text-xs text-[#a6e3a1]">Python</span>
                 <span class="bg-[#2ac3de]/10 border border-[#2ac3de]/30 px-2 py-0.5 rounded text-xs text-[#2ac3de]">FastAPI</span>
-                <span class="bg-[#f7768e]/10 border border-[#f7768e]/30 px-2 py-0.5 rounded text-xs text-[#f7768e]">Redis</span>
+                <span class="bg-[#f38ba8]/10 border border-[#f38ba8]/30 px-2 py-0.5 rounded text-xs text-[#f38ba8]">Redis</span>
               </div>
-              <a href="https://github.com/yeshua89/Authentication_Microservice" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#24283b] border border-[#bb9af7]/30 hover:border-[#bb9af7] rounded text-xs text-[#bb9af7] hover:bg-[#bb9af7]/10 transition-colors">
+              <a href="https://github.com/yeshua89/Authentication_Microservice" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#313244] border border-[#cba6f7]/30 hover:border-[#cba6f7] rounded text-xs text-[#cba6f7] hover:bg-[#cba6f7]/10 transition-colors">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.840 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.430.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 <span data-en="View Code" data-es="Ver Código">View Code</span>
               </a>
             </div>
 
             <!-- Real-time Chat -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#eb6f92]/20 hover:border-[#eb6f92]/50 transition-colors">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#eb6f92]/20 hover:border-[#eb6f92]/50 transition-colors">
               <h4 class="text-base sm:text-lg font-semibold text-[#eb6f92] mb-2" data-en="Real-time Chat System" data-es="Sistema de Chat en Tiempo Real">Real-time Chat System</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Instant messaging application with WebSockets, chat rooms, and push notifications." data-es="Aplicación de mensajería instantánea con WebSockets, salas de chat y notificaciones push.">
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Instant messaging application with WebSockets, chat rooms, and push notifications." data-es="Aplicación de mensajería instantánea con WebSockets, salas de chat y notificaciones push.">
                 Instant messaging application with WebSockets, chat rooms, and push notifications.
               </p>
               <div class="flex flex-wrap gap-1.5">
-                <span class="bg-[#7aa2f7]/10 border border-[#7aa2f7]/30 px-2 py-0.5 rounded text-xs text-[#7aa2f7]">Node.js</span>
-                <span class="bg-[#e0af68]/10 border border-[#e0af68]/30 px-2 py-0.5 rounded text-xs text-[#e0af68]">Socket.io</span>
-                <span class="bg-[#f7768e]/10 border border-[#f7768e]/30 px-2 py-0.5 rounded text-xs text-[#f7768e]">MongoDB</span>
+                <span class="bg-[#89b4fa]/10 border border-[#89b4fa]/30 px-2 py-0.5 rounded text-xs text-[#89b4fa]">Node.js</span>
+                <span class="bg-[#fab387]/10 border border-[#fab387]/30 px-2 py-0.5 rounded text-xs text-[#fab387]">Socket.io</span>
+                <span class="bg-[#f38ba8]/10 border border-[#f38ba8]/30 px-2 py-0.5 rounded text-xs text-[#f38ba8]">MongoDB</span>
               </div>
             </div>
           </div>
         </details>
 
         <!-- APIs & Web Services Category -->
-        <details class="group bg-[#1a1b26] rounded-lg border border-[#7aa2f7]/20 overflow-hidden" open>
-          <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#24283b] transition-colors flex items-center justify-between">
-            <span class="text-base sm:text-lg font-semibold text-[#7aa2f7]" data-en="APIs & Web Services" data-es="APIs y Servicios Web">APIs & Web Services</span>
-            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#7aa2f7] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <details class="group bg-[#1e1e2e] rounded-lg border border-[#89b4fa]/20 overflow-hidden" open>
+          <summary class="cursor-pointer list-none p-3 sm:p-4 hover:bg-[#313244] transition-colors flex items-center justify-between">
+            <span class="text-base sm:text-lg font-semibold text-[#89b4fa]" data-en="APIs & Web Services" data-es="APIs y Servicios Web">APIs & Web Services</span>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#89b4fa] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
           <div class="p-3 sm:p-4 pt-0 space-y-3 sm:space-y-4">
             <!-- E-commerce REST API -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#7aa2f7]/20 hover:border-[#7aa2f7]/50 transition-colors">
-              <h4 class="text-base sm:text-lg font-semibold text-[#7aa2f7] mb-2" data-en="E-commerce REST API" data-es="API REST E-commerce">E-commerce REST API</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Complete API for e-commerce platform with JWT authentication, product management, shopping carts, and payments." data-es="API completa para plataforma de e-commerce con autenticación JWT, gestión de productos, carritos y pagos.">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#89b4fa]/20 hover:border-[#89b4fa]/50 transition-colors">
+              <h4 class="text-base sm:text-lg font-semibold text-[#89b4fa] mb-2" data-en="E-commerce REST API" data-es="API REST E-commerce">E-commerce REST API</h4>
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="Complete API for e-commerce platform with JWT authentication, product management, shopping carts, and payments." data-es="API completa para plataforma de e-commerce con autenticación JWT, gestión de productos, carritos y pagos.">
                 Complete API for e-commerce platform with JWT authentication, product management, shopping carts, and payments.
               </p>
               <div class="flex flex-wrap gap-1.5 mb-3">
-                <span class="bg-[#7aa2f7]/10 border border-[#7aa2f7]/30 px-2 py-0.5 rounded text-xs text-[#7aa2f7]">Node.js</span>
-                <span class="bg-[#9ece6a]/10 border border-[#9ece6a]/30 px-2 py-0.5 rounded text-xs text-[#9ece6a]">Express</span>
-                <span class="bg-[#bb9af7]/10 border border-[#bb9af7]/30 px-2 py-0.5 rounded text-xs text-[#bb9af7]">PostgreSQL</span>
+                <span class="bg-[#89b4fa]/10 border border-[#89b4fa]/30 px-2 py-0.5 rounded text-xs text-[#89b4fa]">Node.js</span>
+                <span class="bg-[#a6e3a1]/10 border border-[#a6e3a1]/30 px-2 py-0.5 rounded text-xs text-[#a6e3a1]">Express</span>
+                <span class="bg-[#cba6f7]/10 border border-[#cba6f7]/30 px-2 py-0.5 rounded text-xs text-[#cba6f7]">PostgreSQL</span>
               </div>
-              <a href="https://github.com/yeshua89/E-commerce_REST_API" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#24283b] border border-[#7aa2f7]/30 hover:border-[#7aa2f7] rounded text-xs text-[#7aa2f7] hover:bg-[#7aa2f7]/10 transition-colors">
+              <a href="https://github.com/yeshua89/E-commerce_REST_API" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#313244] border border-[#89b4fa]/30 hover:border-[#89b4fa] rounded text-xs text-[#89b4fa] hover:bg-[#89b4fa]/10 transition-colors">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.840 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.430.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 <span data-en="View Code" data-es="Ver Código">View Code</span>
               </a>
             </div>
 
             <!-- GraphQL API -->
-            <div class="bg-[#1a1b26] p-4 sm:p-5 rounded-lg border border-[#2ac3de]/20 hover:border-[#2ac3de]/50 transition-colors">
+            <div class="bg-[#1e1e2e] p-4 sm:p-5 rounded-lg border border-[#2ac3de]/20 hover:border-[#2ac3de]/50 transition-colors">
               <h4 class="text-base sm:text-lg font-semibold text-[#2ac3de] mb-2" data-en="GraphQL API" data-es="API GraphQL">GraphQL API</h4>
-              <p class="text-[#c0caf5] text-xs sm:text-sm mb-3 leading-relaxed" data-en="GraphQL API for content management with real-time subscriptions and query optimization." data-es="API GraphQL para gestión de contenido con subscripciones en tiempo real y optimización de queries.">
+              <p class="text-[#cdd6f4] text-xs sm:text-sm mb-3 leading-relaxed" data-en="GraphQL API for content management with real-time subscriptions and query optimization." data-es="API GraphQL para gestión de contenido con subscripciones en tiempo real y optimización de queries.">
                 GraphQL API for content management with real-time subscriptions and query optimization.
               </p>
               <div class="flex flex-wrap gap-1.5 mb-3">
-                <span class="bg-[#7aa2f7]/10 border border-[#7aa2f7]/30 px-2 py-0.5 rounded text-xs text-[#7aa2f7]">Node.js</span>
+                <span class="bg-[#89b4fa]/10 border border-[#89b4fa]/30 px-2 py-0.5 rounded text-xs text-[#89b4fa]">Node.js</span>
                 <span class="bg-[#eb6f92]/10 border border-[#eb6f92]/30 px-2 py-0.5 rounded text-xs text-[#eb6f92]">GraphQL</span>
-                <span class="bg-[#bb9af7]/10 border border-[#bb9af7]/30 px-2 py-0.5 rounded text-xs text-[#bb9af7]">PostgreSQL</span>
+                <span class="bg-[#cba6f7]/10 border border-[#cba6f7]/30 px-2 py-0.5 rounded text-xs text-[#cba6f7]">PostgreSQL</span>
               </div>
-              <a href="https://github.com/yeshua89/GraphQL_API" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#24283b] border border-[#2ac3de]/30 hover:border-[#2ac3de] rounded text-xs text-[#2ac3de] hover:bg-[#2ac3de]/10 transition-colors">
+              <a href="https://github.com/yeshua89/GraphQL_API" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#313244] border border-[#2ac3de]/30 hover:border-[#2ac3de] rounded text-xs text-[#2ac3de] hover:bg-[#2ac3de]/10 transition-colors">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.840 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.430.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 <span data-en="View Code" data-es="Ver Código">View Code</span>
               </a>
@@ -524,22 +529,22 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#1a1b26] to-[#24283b]">
+    <section id="contact" class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 bg-gradient-to-br from-[#181825] to-[#11111b]">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] bg-clip-text text-transparent" data-en="Contact" data-es="Contacto">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 bg-gradient-to-r from-[#89b4fa] to-[#cba6f7] bg-clip-text text-transparent" data-en="Contact" data-es="Contacto">
           Contact
         </h2>
-        <p class="text-base sm:text-lg md:text-xl text-[#c0caf5] mb-6 sm:mb-8 px-4" data-en="Interested in working together? Let's talk!" data-es="¿Interesado en trabajar juntos? ¡Hablemos!">
+        <p class="text-lg sm:text-xl md:text-2xl text-[#cdd6f4] mb-10 sm:mb-12 px-4 font-medium" data-en="Interested in working together? Let's talk!" data-es="¿Interesado en trabajar juntos? ¡Hablemos!">
           Interested in working together? Let's talk!
         </p>
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
-          <a href="mailto:jesusdatica.dev@gmail.com" class="bg-gradient-to-r from-[#7aa2f7] to-[#2ac3de] hover:from-[#5a82d7] hover:to-[#1aa3be] px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition shadow-lg hover:shadow-xl">
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
+          <a href="mailto:jesusdatica.dev@gmail.com" class="bg-gradient-to-r from-[#89b4fa] to-[#74c7ec] hover:from-[#74c7ec] hover:to-[#89dceb] px-8 py-3.5 rounded-lg text-base sm:text-lg font-bold text-[#11111b] transition-all shadow-lg hover:shadow-xl hover:scale-105">
             Email
           </a>
-          <a href="https://github.com/yeshua89" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#24283b] to-[#1f1d2e] border-2 border-[#7aa2f7]/50 hover:border-[#7aa2f7] px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition shadow-lg hover:shadow-xl">
+          <a href="https://github.com/yeshua89" target="_blank" rel="noopener noreferrer" class="bg-[#313244] hover:bg-[#45475a] border-2 border-[#89b4fa]/40 hover:border-[#89b4fa] px-8 py-3.5 rounded-lg text-base sm:text-lg font-bold text-[#cdd6f4] transition-all shadow-lg hover:shadow-xl">
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/jesus-datica/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#bb9af7] to-[#eb6f92] hover:from-[#9b7ad7] hover:to-[#cb4f72] px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition shadow-lg hover:shadow-xl">
+          <a href="https://www.linkedin.com/in/jesus-datica/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#cba6f7] to-[#f5c2e7] hover:from-[#b4a0e7] hover:to-[#e5b2d7] px-8 py-3.5 rounded-lg text-base sm:text-lg font-bold text-[#11111b] transition-all shadow-lg hover:shadow-xl hover:scale-105">
             LinkedIn
           </a>
         </div>
@@ -547,8 +552,8 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#16161e] py-6 sm:py-8 px-4 text-center text-[#565f89] border-t border-[#7aa2f7]/10">
-      <p class="text-xs sm:text-sm" data-en="© 2025 Jesús Datica. All rights reserved." data-es="© 2025 Jesús Datica. Todos los derechos reservados.">
+    <footer class="bg-[#11111b] py-8 sm:py-10 px-4 text-center text-[#6c7086] border-t border-[#89b4fa]/20">
+      <p class="text-sm sm:text-base" data-en="© 2025 Jesús Datica. All rights reserved." data-es="© 2025 Jesús Datica. Todos los derechos reservados.">
         © 2025 Jesús Datica. All rights reserved.
       </p>
     </footer>
@@ -595,7 +600,7 @@ import Layout from '../layouts/Layout.astro';
         category: 'ai',
         description: 'AI coding assistant trained on your commit history using CodeLlama 34B + LoRA',
         tech: ['Python', 'CodeLlama', 'LoRA', 'Docker', 'Telegram'],
-        color: '#bb9af7',
+        color: '#cba6f7',
         github: 'https://github.com/yeshua89',
         demo: null
       },
@@ -604,7 +609,7 @@ import Layout from '../layouts/Layout.astro';
         category: 'ai',
         description: 'Automated dead code detection system with ceremonial obituaries. Scans monorepos, finds unused functions, generates AI-powered obituaries (solemn or sarcastic), publishes to Slack, and creates automated PRs with code removal and updated tests',
         tech: ['Python', 'Pyright', 'Static Analysis', 'AI', 'Slack API', 'Git Automation'],
-        color: '#f7768e',
+        color: '#f38ba8',
         github: 'https://github.com/yeshua89',
         demo: null
       },
@@ -640,7 +645,7 @@ import Layout from '../layouts/Layout.astro';
         category: 'distributed',
         description: 'Distributed payment engine with event-driven architecture',
         tech: ['Go', 'Python', 'FastAPI', 'NATS', 'Kafka', 'PostgreSQL', 'Redis'],
-        color: '#9ece6a',
+        color: '#a6e3a1',
         github: 'https://github.com/yeshua89/PyFlow',
         demo: null
       },
@@ -649,7 +654,7 @@ import Layout from '../layouts/Layout.astro';
         category: 'distributed',
         description: 'OAuth2 + JWT authentication service with microservices architecture',
         tech: ['Python', 'FastAPI', 'Redis'],
-        color: '#bb9af7',
+        color: '#cba6f7',
         github: 'https://github.com/yeshua89/Authentication_Microservice',
         demo: null
       },
@@ -667,7 +672,7 @@ import Layout from '../layouts/Layout.astro';
         category: 'api',
         description: 'Complete e-commerce API with JWT, products, carts, and payments',
         tech: ['Node.js', 'Express', 'PostgreSQL'],
-        color: '#7aa2f7',
+        color: '#89b4fa',
         github: 'https://github.com/yeshua89/E-commerce_REST_API',
         demo: null
       },
@@ -683,9 +688,9 @@ import Layout from '../layouts/Layout.astro';
     };
 
     const categories = {
-      'ai': { name: 'AI & Innovation', color: '#bb9af7' },
-      'distributed': { name: 'Distributed Systems & Backend', color: '#9ece6a' },
-      'api': { name: 'APIs & Web Services', color: '#7aa2f7' }
+      'ai': { name: 'AI & Innovation', color: '#cba6f7' },
+      'distributed': { name: 'Distributed Systems & Backend', color: '#a6e3a1' },
+      'api': { name: 'APIs & Web Services', color: '#89b4fa' }
     };
 
     const terminalInput = document.getElementById('terminal-input') as HTMLInputElement;
@@ -704,24 +709,24 @@ import Layout from '../layouts/Layout.astro';
     terminalModeBtn?.addEventListener('click', () => {
       terminalView?.classList.remove('hidden');
       gridView?.classList.add('hidden');
-      terminalModeBtn.classList.add('bg-[#7aa2f7]', 'text-[#1a1b26]');
-      terminalModeBtn.classList.remove('text-[#7aa2f7]', 'hover:bg-[#7aa2f7]/10');
-      gridModeBtn?.classList.remove('bg-[#7aa2f7]', 'text-[#1a1b26]');
-      gridModeBtn?.classList.add('text-[#7aa2f7]', 'hover:bg-[#7aa2f7]/10');
+      terminalModeBtn.classList.add('bg-[#89b4fa]', 'text-[#1e1e2e]');
+      terminalModeBtn.classList.remove('text-[#89b4fa]', 'hover:bg-[#89b4fa]/10');
+      gridModeBtn?.classList.remove('bg-[#89b4fa]', 'text-[#1e1e2e]');
+      gridModeBtn?.classList.add('text-[#89b4fa]', 'hover:bg-[#89b4fa]/10');
     });
 
     gridModeBtn?.addEventListener('click', () => {
       terminalView?.classList.add('hidden');
       gridView?.classList.remove('hidden');
-      gridModeBtn.classList.add('bg-[#7aa2f7]', 'text-[#1a1b26]');
-      gridModeBtn.classList.remove('text-[#7aa2f7]', 'hover:bg-[#7aa2f7]/10');
-      terminalModeBtn?.classList.remove('bg-[#7aa2f7]', 'text-[#1a1b26]');
-      terminalModeBtn?.classList.add('text-[#7aa2f7]', 'hover:bg-[#7aa2f7]/10');
+      gridModeBtn.classList.add('bg-[#89b4fa]', 'text-[#1e1e2e]');
+      gridModeBtn.classList.remove('text-[#89b4fa]', 'hover:bg-[#89b4fa]/10');
+      terminalModeBtn?.classList.remove('bg-[#89b4fa]', 'text-[#1e1e2e]');
+      terminalModeBtn?.classList.add('text-[#89b4fa]', 'hover:bg-[#89b4fa]/10');
     });
 
     // Update prompt based on current directory
     function updatePrompt() {
-      const promptElement = document.querySelector('.terminal-container .bg-\\[\\#24283b\\] span');
+      const promptElement = document.querySelector('.terminal-container .bg-\\[\\#313244\\] span');
       if (promptElement) {
         promptElement.textContent = `projects@portfolio:${currentDir}`;
       }
@@ -736,7 +741,7 @@ import Layout from '../layouts/Layout.astro';
       const command = parts[0].toLowerCase();
       const args = parts.slice(1);
 
-      addOutput(`<span class="text-[#9ece6a]">$</span> <span class="text-[#c0caf5]">${trimmedCmd}</span>`);
+      addOutput(`<span class="text-[#a6e3a1]">$</span> <span class="text-[#cdd6f4]">${trimmedCmd}</span>`);
 
       switch(command) {
         case 'cd':
@@ -746,14 +751,14 @@ import Layout from '../layouts/Layout.astro';
           listDirectory(args);
           break;
         case 'pwd':
-          addOutput(`<span class="text-[#c0caf5]">${currentDir}</span>`);
+          addOutput(`<span class="text-[#cdd6f4]">${currentDir}</span>`);
           break;
         case 'cat':
         case 'show':
           if (args.length > 0) {
             showProject(args.join('-'));
           } else {
-            addOutput('<span class="text-[#f7768e]">Error: Specify a project name</span>');
+            addOutput('<span class="text-[#f38ba8]">Error: Specify a project name</span>');
           }
           break;
         case 'grep':
@@ -761,7 +766,7 @@ import Layout from '../layouts/Layout.astro';
           if (args.length > 0) {
             filterByTech(args.join(' '));
           } else {
-            addOutput('<span class="text-[#f7768e]">Error: Specify a technology</span>');
+            addOutput('<span class="text-[#f38ba8]">Error: Specify a technology</span>');
           }
           break;
         case 'tree':
@@ -783,25 +788,25 @@ import Layout from '../layouts/Layout.astro';
           if (args[0] === 'log') {
             showGitLog();
           } else {
-            addOutput('<span class="text-[#f7768e]">Usage: git log</span>');
+            addOutput('<span class="text-[#f38ba8]">Usage: git log</span>');
           }
           break;
         case 'docker':
           if (args[0] === 'ps') {
             showDockerPs();
           } else {
-            addOutput('<span class="text-[#f7768e]">Usage: docker ps</span>');
+            addOutput('<span class="text-[#f38ba8]">Usage: docker ps</span>');
           }
           break;
         case 'whoami':
-          addOutput('<span class="text-[#bb9af7]">Jesús Datica - Backend Developer</span>');
-          addOutput('<span class="text-[#565f89]">Specializing in distributed systems, APIs, and AI</span>');
+          addOutput('<span class="text-[#cba6f7]">Jesús Datica - Backend Developer</span>');
+          addOutput('<span class="text-[#6c7086]">Specializing in distributed systems, APIs, and AI</span>');
           break;
         case 'uname':
-          addOutput('<span class="text-[#7aa2f7]">PortfolioOS 2.0 (TokyoNight Edition)</span>');
+          addOutput('<span class="text-[#89b4fa]">PortfolioOS 2.0 (TokyoNight Edition)</span>');
           break;
         case 'echo':
-          addOutput(`<span class="text-[#c0caf5]">${args.join(' ')}</span>`);
+          addOutput(`<span class="text-[#cdd6f4]">${args.join(' ')}</span>`);
           break;
         case 'quote':
           showRandomQuote();
@@ -817,32 +822,32 @@ import Layout from '../layouts/Layout.astro';
           showHelp();
           break;
         case 'exit':
-          addOutput('<span class="text-[#f7768e]">Nice try! But you can\'t escape my portfolio 😎</span>');
+          addOutput('<span class="text-[#f38ba8]">Nice try! But you can\'t escape my portfolio 😎</span>');
           break;
         case 'sudo':
-          addOutput('<span class="text-[#f7768e]">Nice try, but you don\'t have sudo access here! 🔐</span>');
+          addOutput('<span class="text-[#f38ba8]">Nice try, but you don\'t have sudo access here! 🔐</span>');
           break;
         case 'rm':
           if (args.includes('-rf') && args.includes('/')) {
-            addOutput('<span class="text-[#f7768e]">😱 Whoa there! That would delete everything!</span>');
-            addOutput('<span class="text-[#9ece6a]">...but don\'t worry, this is a safe space 😌</span>');
+            addOutput('<span class="text-[#f38ba8]">😱 Whoa there! That would delete everything!</span>');
+            addOutput('<span class="text-[#a6e3a1]">...but don\'t worry, this is a safe space 😌</span>');
           } else {
-            addOutput('<span class="text-[#f7768e]">rm: cannot remove: Operation not permitted</span>');
+            addOutput('<span class="text-[#f38ba8]">rm: cannot remove: Operation not permitted</span>');
           }
           break;
         case 'hack':
         case 'hackerman':
-          addOutput('<span class="text-[#9ece6a]">🎩 HACKERMAN MODE ACTIVATED 🎩</span>');
-          addOutput('<span class="text-[#bb9af7]">Hacking the mainframe...</span>');
-          setTimeout(() => addOutput('<span class="text-[#9ece6a]">Access granted! Just kidding 😄</span>'), 500);
+          addOutput('<span class="text-[#a6e3a1]">🎩 HACKERMAN MODE ACTIVATED 🎩</span>');
+          addOutput('<span class="text-[#cba6f7]">Hacking the mainframe...</span>');
+          setTimeout(() => addOutput('<span class="text-[#a6e3a1]">Access granted! Just kidding 😄</span>'), 500);
           break;
         case 'coffee':
-          addOutput('<span class="text-[#e0af68]">☕ Brewing coffee... Please wait...</span>');
-          setTimeout(() => addOutput('<span class="text-[#9ece6a]">☕ Your coffee is ready! Enjoy coding!</span>'), 1000);
+          addOutput('<span class="text-[#fab387]">☕ Brewing coffee... Please wait...</span>');
+          setTimeout(() => addOutput('<span class="text-[#a6e3a1]">☕ Your coffee is ready! Enjoy coding!</span>'), 1000);
           break;
         default:
-          addOutput(`<span class="text-[#f7768e]">Command not found: ${command}</span>`);
-          addOutput('<span class="text-[#565f89]">Type "help" for available commands</span>');
+          addOutput(`<span class="text-[#f38ba8]">Command not found: ${command}</span>`);
+          addOutput('<span class="text-[#6c7086]">Type "help" for available commands</span>');
       }
     }
 
@@ -851,12 +856,12 @@ import Layout from '../layouts/Layout.astro';
       if (!dir || dir === '~') {
         currentDir = '~';
         currentCategory = null;
-        addOutput('<span class="text-[#9ece6a]">Changed to home directory</span>');
+        addOutput('<span class="text-[#a6e3a1]">Changed to home directory</span>');
       } else if (dir === '..') {
         if (currentDir !== '~') {
           currentDir = '~';
           currentCategory = null;
-          addOutput('<span class="text-[#9ece6a]">Changed to home directory</span>');
+          addOutput('<span class="text-[#a6e3a1]">Changed to home directory</span>');
         }
       } else {
         const category = Object.keys(categories).find(key =>
@@ -869,8 +874,8 @@ import Layout from '../layouts/Layout.astro';
           const catInfo = categories[category as keyof typeof categories];
           addOutput(`<span style="color: ${catInfo.color}">Entered ${catInfo.name}</span>`);
         } else {
-          addOutput(`<span class="text-[#f7768e]">cd: ${dir}: No such directory</span>`);
-          addOutput('<span class="text-[#565f89]">Available: ai, distributed, api</span>');
+          addOutput(`<span class="text-[#f38ba8]">cd: ${dir}: No such directory</span>`);
+          addOutput('<span class="text-[#6c7086]">Available: ai, distributed, api</span>');
         }
       }
       updatePrompt();
@@ -908,18 +913,18 @@ import Layout from '../layouts/Layout.astro';
 
     function listCategories() {
       Object.entries(categories).forEach(([key, cat]) => {
-        addOutput(`<span style="color: ${cat.color}">📁 ${cat.name}</span> <span class="text-[#565f89]">(${key})</span>`);
+        addOutput(`<span style="color: ${cat.color}">📁 ${cat.name}</span> <span class="text-[#6c7086]">(${key})</span>`);
       });
     }
 
     function listAllProjects() {
       Object.entries(projects).forEach(([key, project]) => {
-        addOutput(`<span style="color: ${project.color}">▸ ${project.name}</span> <span class="text-[#565f89]">(${key})</span>`);
+        addOutput(`<span style="color: ${project.color}">▸ ${project.name}</span> <span class="text-[#6c7086]">(${key})</span>`);
       });
     }
 
     function showTree() {
-      addOutput('<span class="text-[#9ece6a]">.</span>');
+      addOutput('<span class="text-[#a6e3a1]">.</span>');
       Object.entries(categories).forEach(([catKey, cat], catIndex, catArray) => {
         const isLastCat = catIndex === catArray.length - 1;
         const catPrefix = isLastCat ? '└── ' : '├── ';
@@ -930,7 +935,7 @@ import Layout from '../layouts/Layout.astro';
           const isLastProj = projIndex === projArray.length - 1;
           const linePrefix = isLastCat ? '    ' : '│   ';
           const projPrefix = isLastProj ? '└── ' : '├── ';
-          addOutput(`<span class="text-[#565f89]">${linePrefix}${projPrefix}</span><span style="color: ${project.color}">${key}</span>`);
+          addOutput(`<span class="text-[#6c7086]">${linePrefix}${projPrefix}</span><span style="color: ${project.color}">${key}</span>`);
         });
       });
     }
@@ -940,16 +945,16 @@ import Layout from '../layouts/Layout.astro';
       if (project) {
         addOutput('<div class="mt-2 mb-2 pl-4">');
         addOutput(`<span style="color: ${project.color}" class="font-bold text-lg">📦 ${project.name}</span>`);
-        addOutput(`<span class="text-[#c0caf5] block mt-1">${project.description}</span>`);
-        addOutput(`<span class="text-[#e0af68] block mt-2">🛠️  Technologies:</span>`);
-        addOutput(`<span class="text-[#565f89] ml-4">${project.tech.join(', ')}</span>`);
+        addOutput(`<span class="text-[#cdd6f4] block mt-1">${project.description}</span>`);
+        addOutput(`<span class="text-[#fab387] block mt-2">🛠️  Technologies:</span>`);
+        addOutput(`<span class="text-[#6c7086] ml-4">${project.tech.join(', ')}</span>`);
         if (project.github) {
-          addOutput(`<span class="text-[#7aa2f7] block mt-2">🔗 GitHub: <a href="${project.github}" target="_blank" class="underline">${project.github}</a></span>`);
+          addOutput(`<span class="text-[#89b4fa] block mt-2">🔗 GitHub: <a href="${project.github}" target="_blank" class="underline">${project.github}</a></span>`);
         }
         addOutput('</div>');
       } else {
-        addOutput('<span class="text-[#f7768e]">Project not found</span>');
-        addOutput('<span class="text-[#565f89]">Try "ls --all" to see available projects</span>');
+        addOutput('<span class="text-[#f38ba8]">Project not found</span>');
+        addOutput('<span class="text-[#6c7086]">Try "ls --all" to see available projects</span>');
       }
     }
 
@@ -958,28 +963,28 @@ import Layout from '../layouts/Layout.astro';
         project.tech.some(t => t.toLowerCase().includes(tech.toLowerCase()))
       );
       if (filtered.length > 0) {
-        addOutput(`<span class="text-[#9ece6a]">Found ${filtered.length} project(s) with "${tech}":</span>`);
+        addOutput(`<span class="text-[#a6e3a1]">Found ${filtered.length} project(s) with "${tech}":</span>`);
         filtered.forEach(([key, project]) => {
-          addOutput(`<span style="color: ${project.color}">▸ ${project.name}</span> <span class="text-[#565f89]">(${key})</span>`);
+          addOutput(`<span style="color: ${project.color}">▸ ${project.name}</span> <span class="text-[#6c7086]">(${key})</span>`);
         });
       } else {
-        addOutput(`<span class="text-[#f7768e]">No projects found with "${tech}"</span>`);
+        addOutput(`<span class="text-[#f38ba8]">No projects found with "${tech}"</span>`);
       }
     }
 
     function showNeofetch() {
       const infoLines = [
-        '<span class="text-[#9ece6a] font-bold">jesusado</span><span class="text-[#c0caf5]">@</span><span class="text-[#7aa2f7] font-bold">portfolio</span>',
-        '<span class="text-[#565f89]">────────────────────────────────────</span>',
-        '<span class="text-[#7aa2f7]">OS:</span> <span class="text-[#c0caf5]">PortfolioOS 2.0 (TokyoNight)</span>',
-        '<span class="text-[#7aa2f7]">Shell:</span> <span class="text-[#c0caf5]">interactive-zsh</span>',
-        '<span class="text-[#7aa2f7]">Uptime:</span> <span class="text-[#c0caf5]">Building systems since 2020</span>',
-        '<span class="text-[#7aa2f7]">Packages:</span> <span class="text-[#c0caf5]">10 projects, 20+ technologies</span>',
-        '<span class="text-[#7aa2f7]">Theme:</span> <span class="text-[#c0caf5]">Backend Developer</span>',
-        '<span class="text-[#7aa2f7]">Focus:</span> <span class="text-[#c0caf5]">AI/DevOps/Distributed Systems</span>',
-        '<span class="text-[#7aa2f7]">Terminal:</span> <span class="text-[#c0caf5]">Kitty-inspired</span>',
-        '<span class="text-[#7aa2f7]">CPU:</span> <span class="text-[#c0caf5]">Coffee + Code</span>',
-        '<span class="text-[#7aa2f7]">Memory:</span> <span class="text-[#c0caf5]">Infinite learning capacity</span>'
+        '<span class="text-[#a6e3a1] font-bold">jesusado</span><span class="text-[#cdd6f4]">@</span><span class="text-[#89b4fa] font-bold">portfolio</span>',
+        '<span class="text-[#6c7086]">────────────────────────────────────</span>',
+        '<span class="text-[#89b4fa]">OS:</span> <span class="text-[#cdd6f4]">PortfolioOS 2.0 (TokyoNight)</span>',
+        '<span class="text-[#89b4fa]">Shell:</span> <span class="text-[#cdd6f4]">interactive-zsh</span>',
+        '<span class="text-[#89b4fa]">Uptime:</span> <span class="text-[#cdd6f4]">Building systems since 2020</span>',
+        '<span class="text-[#89b4fa]">Packages:</span> <span class="text-[#cdd6f4]">10 projects, 20+ technologies</span>',
+        '<span class="text-[#89b4fa]">Theme:</span> <span class="text-[#cdd6f4]">Backend Developer</span>',
+        '<span class="text-[#89b4fa]">Focus:</span> <span class="text-[#cdd6f4]">AI/DevOps/Distributed Systems</span>',
+        '<span class="text-[#89b4fa]">Terminal:</span> <span class="text-[#cdd6f4]">Kitty-inspired</span>',
+        '<span class="text-[#89b4fa]">CPU:</span> <span class="text-[#cdd6f4]">Coffee + Code</span>',
+        '<span class="text-[#89b4fa]">Memory:</span> <span class="text-[#cdd6f4]">Infinite learning capacity</span>'
       ];
 
       const info = infoLines.map(line => `<div>${line}</div>`).join('');
@@ -998,34 +1003,34 @@ import Layout from '../layouts/Layout.astro';
 
     function showContact() {
       addOutput('<div class="mt-2 mb-2">');
-      addOutput('<span class="text-[#9ece6a] text-lg">📧 Let\'s Build Something Amazing Together!</span>');
-      addOutput('<span class="text-[#565f89]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
-      addOutput('<span class="text-[#c0caf5]">📮 Email:</span>     <span class="text-[#7aa2f7]">jesusdatica.dev@gmail.com</span>');
-      addOutput('<span class="text-[#c0caf5]">💼 LinkedIn:</span>  <a href="https://linkedin.com/in/jesus-datica" target="_blank" class="text-[#7aa2f7] underline">linkedin.com/in/jesus-datica</a>');
-      addOutput('<span class="text-[#c0caf5]">🐙 GitHub:</span>    <a href="https://github.com/yeshua89" target="_blank" class="text-[#7aa2f7] underline">github.com/yeshua89</a>');
-      addOutput('<span class="text-[#c0caf5]">🌐 Location:</span>  <span class="text-[#bb9af7]">Remote / Available Worldwide</span>');
-      addOutput('<span class="text-[#c0caf5]">⚡ Status:</span>    <span class="text-[#9ece6a]">Open to opportunities</span>');
+      addOutput('<span class="text-[#a6e3a1] text-lg">📧 Let\'s Build Something Amazing Together!</span>');
+      addOutput('<span class="text-[#6c7086]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
+      addOutput('<span class="text-[#cdd6f4]">📮 Email:</span>     <span class="text-[#89b4fa]">jesusdatica.dev@gmail.com</span>');
+      addOutput('<span class="text-[#cdd6f4]">💼 LinkedIn:</span>  <a href="https://linkedin.com/in/jesus-datica" target="_blank" class="text-[#89b4fa] underline">linkedin.com/in/jesus-datica</a>');
+      addOutput('<span class="text-[#cdd6f4]">🐙 GitHub:</span>    <a href="https://github.com/yeshua89" target="_blank" class="text-[#89b4fa] underline">github.com/yeshua89</a>');
+      addOutput('<span class="text-[#cdd6f4]">🌐 Location:</span>  <span class="text-[#cba6f7]">Remote / Available Worldwide</span>');
+      addOutput('<span class="text-[#cdd6f4]">⚡ Status:</span>    <span class="text-[#a6e3a1]">Open to opportunities</span>');
       addOutput('');
-      addOutput('<span class="text-[#e0af68]">💡 Interested in:</span>');
-      addOutput('<span class="text-[#565f89]">  • Distributed Systems Architecture</span>');
-      addOutput('<span class="text-[#565f89]">  • AI/ML Integration Projects</span>');
-      addOutput('<span class="text-[#565f89]">  • High-Performance Backend Systems</span>');
-      addOutput('<span class="text-[#565f89]">  • Fintech & Payment Processing</span>');
+      addOutput('<span class="text-[#fab387]">💡 Interested in:</span>');
+      addOutput('<span class="text-[#6c7086]">  • Distributed Systems Architecture</span>');
+      addOutput('<span class="text-[#6c7086]">  • AI/ML Integration Projects</span>');
+      addOutput('<span class="text-[#6c7086]">  • High-Performance Backend Systems</span>');
+      addOutput('<span class="text-[#6c7086]">  • Fintech & Payment Processing</span>');
       addOutput('</div>');
     }
 
     function showSkills() {
       addOutput('<div class="mt-2 mb-2">');
-      addOutput('<span class="text-[#9ece6a] text-lg">🛠️  Technical Skills:</span>');
-      addOutput('<span class="text-[#565f89]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
-      addOutput('<span class="text-[#c0caf5]">Backend Development</span>  <span class="text-[#7aa2f7]">████████████</span><span class="text-[#1a1b26]">░</span> <span class="text-[#9ece6a]">95%</span>');
-      addOutput('<span class="text-[#c0caf5]">Distributed Systems</span>  <span class="text-[#7aa2f7]">██████████</span><span class="text-[#1a1b26]">░░</span> <span class="text-[#9ece6a]">90%</span>');
-      addOutput('<span class="text-[#c0caf5]">AI/ML Integration</span>    <span class="text-[#7aa2f7]">█████████</span><span class="text-[#1a1b26]">░░░</span> <span class="text-[#9ece6a]">85%</span>');
-      addOutput('<span class="text-[#c0caf5]">API Design</span>           <span class="text-[#7aa2f7]">████████████</span><span class="text-[#1a1b26]">░</span> <span class="text-[#9ece6a]">95%</span>');
-      addOutput('<span class="text-[#c0caf5]">Database Design</span>      <span class="text-[#7aa2f7]">██████████</span><span class="text-[#1a1b26]">░░</span> <span class="text-[#9ece6a]">90%</span>');
-      addOutput('<span class="text-[#c0caf5]">DevOps/Docker</span>        <span class="text-[#7aa2f7]">█████████</span><span class="text-[#1a1b26]">░░░</span> <span class="text-[#9ece6a]">85%</span>');
-      addOutput('<span class="text-[#c0caf5]">Microservices</span>        <span class="text-[#7aa2f7]">██████████</span><span class="text-[#1a1b26]">░░</span> <span class="text-[#9ece6a]">90%</span>');
-      addOutput('<span class="text-[#c0caf5]">Event-Driven Arch</span>    <span class="text-[#7aa2f7]">█████████</span><span class="text-[#1a1b26]">░░░</span> <span class="text-[#9ece6a]">85%</span>');
+      addOutput('<span class="text-[#a6e3a1] text-lg">🛠️  Technical Skills:</span>');
+      addOutput('<span class="text-[#6c7086]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
+      addOutput('<span class="text-[#cdd6f4]">Backend Development</span>  <span class="text-[#89b4fa]">████████████</span><span class="text-[#1e1e2e]">░</span> <span class="text-[#a6e3a1]">95%</span>');
+      addOutput('<span class="text-[#cdd6f4]">Distributed Systems</span>  <span class="text-[#89b4fa]">██████████</span><span class="text-[#1e1e2e]">░░</span> <span class="text-[#a6e3a1]">90%</span>');
+      addOutput('<span class="text-[#cdd6f4]">AI/ML Integration</span>    <span class="text-[#89b4fa]">█████████</span><span class="text-[#1e1e2e]">░░░</span> <span class="text-[#a6e3a1]">85%</span>');
+      addOutput('<span class="text-[#cdd6f4]">API Design</span>           <span class="text-[#89b4fa]">████████████</span><span class="text-[#1e1e2e]">░</span> <span class="text-[#a6e3a1]">95%</span>');
+      addOutput('<span class="text-[#cdd6f4]">Database Design</span>      <span class="text-[#89b4fa]">██████████</span><span class="text-[#1e1e2e]">░░</span> <span class="text-[#a6e3a1]">90%</span>');
+      addOutput('<span class="text-[#cdd6f4]">DevOps/Docker</span>        <span class="text-[#89b4fa]">█████████</span><span class="text-[#1e1e2e]">░░░</span> <span class="text-[#a6e3a1]">85%</span>');
+      addOutput('<span class="text-[#cdd6f4]">Microservices</span>        <span class="text-[#89b4fa]">██████████</span><span class="text-[#1e1e2e]">░░</span> <span class="text-[#a6e3a1]">90%</span>');
+      addOutput('<span class="text-[#cdd6f4]">Event-Driven Arch</span>    <span class="text-[#89b4fa]">█████████</span><span class="text-[#1e1e2e]">░░░</span> <span class="text-[#a6e3a1]">85%</span>');
       addOutput('</div>');
     }
 
@@ -1044,44 +1049,44 @@ import Layout from '../layouts/Layout.astro';
       const mostUsed = Object.entries(techCount).sort((a, b) => b[1] - a[1])[0];
 
       addOutput('<div class="mt-2 mb-2">');
-      addOutput('<span class="text-[#9ece6a] text-lg">📊 Portfolio Statistics:</span>');
-      addOutput('<span class="text-[#565f89]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
-      addOutput(`<span class="text-[#c0caf5]">Total Projects:</span>     <span class="text-[#7aa2f7]">${totalProjects}</span>`);
-      addOutput(`<span class="text-[#c0caf5]">AI Projects:</span>        <span class="text-[#bb9af7]">${aiProjects}</span>`);
-      addOutput(`<span class="text-[#c0caf5]">Distributed Sys:</span>    <span class="text-[#9ece6a]">${distributedProjects}</span>`);
-      addOutput(`<span class="text-[#c0caf5]">APIs:</span>               <span class="text-[#2ac3de]">${apiProjects}</span>`);
-      addOutput('<span class="text-[#565f89]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
-      addOutput(`<span class="text-[#c0caf5]">Most Used Tech:</span>     <span class="text-[#e0af68]">${mostUsed[0]} (${mostUsed[1]} projects)</span>`);
-      addOutput('<span class="text-[#c0caf5]">Languages:</span>          <span class="text-[#f7768e]">Python, Go, Node.js, JavaScript</span>');
-      addOutput('<span class="text-[#c0caf5]">Databases:</span>          <span class="text-[#bb9af7]">PostgreSQL, MongoDB, Redis</span>');
-      addOutput('<span class="text-[#c0caf5]">Message Queues:</span>     <span class="text-[#e0af68]">Kafka, NATS</span>');
-      addOutput('<span class="text-[#c0caf5]">Containers:</span>         <span class="text-[#2ac3de]">Docker (6 projects)</span>');
+      addOutput('<span class="text-[#a6e3a1] text-lg">📊 Portfolio Statistics:</span>');
+      addOutput('<span class="text-[#6c7086]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
+      addOutput(`<span class="text-[#cdd6f4]">Total Projects:</span>     <span class="text-[#89b4fa]">${totalProjects}</span>`);
+      addOutput(`<span class="text-[#cdd6f4]">AI Projects:</span>        <span class="text-[#cba6f7]">${aiProjects}</span>`);
+      addOutput(`<span class="text-[#cdd6f4]">Distributed Sys:</span>    <span class="text-[#a6e3a1]">${distributedProjects}</span>`);
+      addOutput(`<span class="text-[#cdd6f4]">APIs:</span>               <span class="text-[#2ac3de]">${apiProjects}</span>`);
+      addOutput('<span class="text-[#6c7086]">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>');
+      addOutput(`<span class="text-[#cdd6f4]">Most Used Tech:</span>     <span class="text-[#fab387]">${mostUsed[0]} (${mostUsed[1]} projects)</span>`);
+      addOutput('<span class="text-[#cdd6f4]">Languages:</span>          <span class="text-[#f38ba8]">Python, Go, Node.js, JavaScript</span>');
+      addOutput('<span class="text-[#cdd6f4]">Databases:</span>          <span class="text-[#cba6f7]">PostgreSQL, MongoDB, Redis</span>');
+      addOutput('<span class="text-[#cdd6f4]">Message Queues:</span>     <span class="text-[#fab387]">Kafka, NATS</span>');
+      addOutput('<span class="text-[#cdd6f4]">Containers:</span>         <span class="text-[#2ac3de]">Docker (6 projects)</span>');
       addOutput('</div>');
     }
 
     function showGitLog() {
       addOutput('<div class="mt-2 mb-2 font-mono">');
-      addOutput('<span class="text-[#e0af68]">f7a2c3b</span> <span class="text-[#565f89]">(</span><span class="text-[#2ac3de]">HEAD -></span> <span class="text-[#9ece6a]">main</span><span class="text-[#565f89]">)</span> <span class="text-[#c0caf5]">feat: add RepoTimeMachine with 3D visualization</span>');
-      addOutput('<span class="text-[#e0af68]">3e9d1a4</span> <span class="text-[#c0caf5]">feat: implement PayFlow distributed payment engine</span>');
-      addOutput('<span class="text-[#e0af68]">2c8f6b9</span> <span class="text-[#c0caf5]">feat: create GhostWriter AI code assistant</span>');
-      addOutput('<span class="text-[#e0af68]">1a5e3d7</span> <span class="text-[#c0caf5]">feat: add authentication microservice with OAuth2</span>');
-      addOutput('<span class="text-[#e0af68]">9b2c4f1</span> <span class="text-[#c0caf5]">feat: implement real-time chat system</span>');
-      addOutput('<span class="text-[#e0af68]">7d1e8a3</span> <span class="text-[#c0caf5]">feat: create e-commerce REST API</span>');
-      addOutput('<span class="text-[#e0af68]">4f9b2c6</span> <span class="text-[#c0caf5]">feat: build GraphQL API with subscriptions</span>');
-      addOutput('<span class="text-[#e0af68]">2a1c5e8</span> <span class="text-[#c0caf5]">init: create PortfolioOS 2.0</span>');
+      addOutput('<span class="text-[#fab387]">f7a2c3b</span> <span class="text-[#6c7086]">(</span><span class="text-[#2ac3de]">HEAD -></span> <span class="text-[#a6e3a1]">main</span><span class="text-[#6c7086]">)</span> <span class="text-[#cdd6f4]">feat: add RepoTimeMachine with 3D visualization</span>');
+      addOutput('<span class="text-[#fab387]">3e9d1a4</span> <span class="text-[#cdd6f4]">feat: implement PayFlow distributed payment engine</span>');
+      addOutput('<span class="text-[#fab387]">2c8f6b9</span> <span class="text-[#cdd6f4]">feat: create GhostWriter AI code assistant</span>');
+      addOutput('<span class="text-[#fab387]">1a5e3d7</span> <span class="text-[#cdd6f4]">feat: add authentication microservice with OAuth2</span>');
+      addOutput('<span class="text-[#fab387]">9b2c4f1</span> <span class="text-[#cdd6f4]">feat: implement real-time chat system</span>');
+      addOutput('<span class="text-[#fab387]">7d1e8a3</span> <span class="text-[#cdd6f4]">feat: create e-commerce REST API</span>');
+      addOutput('<span class="text-[#fab387]">4f9b2c6</span> <span class="text-[#cdd6f4]">feat: build GraphQL API with subscriptions</span>');
+      addOutput('<span class="text-[#fab387]">2a1c5e8</span> <span class="text-[#cdd6f4]">init: create PortfolioOS 2.0</span>');
       addOutput('</div>');
     }
 
     function showDockerPs() {
       addOutput('<div class="mt-2 mb-2 font-mono text-xs">');
-      addOutput('<span class="text-[#c0caf5]">CONTAINER ID   IMAGE              STATUS       PORTS</span>');
-      addOutput('<span class="text-[#bb9af7]">a1b2c3d4e5f6</span>   <span class="text-[#9ece6a]">ghostwriter:2.0   </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8000</span>');
-      addOutput('<span class="text-[#bb9af7]">b2c3d4e5f6a7</span>   <span class="text-[#9ece6a]">payflow:1.5       </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8001</span>');
-      addOutput('<span class="text-[#bb9af7]">c3d4e5f6a7b8</span>   <span class="text-[#9ece6a]">repotimemachine   </span> <span class="text-[#7aa2f7]">Up 1 year </span>   <span class="text-[#565f89]">0.0.0.0:8002</span>');
-      addOutput('<span class="text-[#bb9af7]">d4e5f6a7b8c9</span>   <span class="text-[#9ece6a]">auth-service      </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8003</span>');
-      addOutput('<span class="text-[#bb9af7]">e5f6a7b8c9d0</span>   <span class="text-[#9ece6a]">realtime-chat     </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8004</span>');
-      addOutput('<span class="text-[#bb9af7]">f6a7b8c9d0e1</span>   <span class="text-[#9ece6a]">ecommerce-api     </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8005</span>');
-      addOutput('<span class="text-[#bb9af7]">a7b8c9d0e1f2</span>   <span class="text-[#9ece6a]">graphql-api       </span> <span class="text-[#7aa2f7]">Up 2 years</span>   <span class="text-[#565f89]">0.0.0.0:8006</span>');
+      addOutput('<span class="text-[#cdd6f4]">CONTAINER ID   IMAGE              STATUS       PORTS</span>');
+      addOutput('<span class="text-[#cba6f7]">a1b2c3d4e5f6</span>   <span class="text-[#a6e3a1]">ghostwriter:2.0   </span> <span class="text-[#89b4fa]">Up 2 years</span>   <span class="text-[#6c7086]">0.0.0.0:8000</span>');
+      addOutput('<span class="text-[#cba6f7]">b2c3d4e5f6a7</span>   <span class="text-[#a6e3a1]">payflow:1.5       </span> <span class="text-[#89b4fa]">Up 2 years</span>   <span class="text-[#6c7086]">0.0.0.0:8001</span>');
+      addOutput('<span class="text-[#cba6f7]">c3d4e5f6a7b8</span>   <span class="text-[#a6e3a1]">repotimemachine   </span> <span class="text-[#89b4fa]">Up 1 year </span>   <span class="text-[#6c7086]">0.0.0.0:8002</span>');
+      addOutput('<span class="text-[#cba6f7]">d4e5f6a7b8c9</span>   <span class="text-[#a6e3a1]">auth-service      </span> <span class="text-[#89b4fa]">Up 2 years</span>   <span class="text-[#6c7086]">0.0.0.0:8003</span>');
+      addOutput('<span class="text-[#cba6f7]">e5f6a7b8c9d0</span>   <span class="text-[#a6e3a1]">realtime-chat     </span> <span class="text-[#89b4fa]">Up 2 years</span>   <span class="text-[#6c7086]">0.0.0.0:8004</span>');
+      addOutput('<span class="text-[#cba6f7]">f6a7b8c9d0e1</span>   <span class="text-[#a6e3a1]">ecommerce-api     </span> <span class="text-[#89b4fa]">Up 2 years</span>   <span class="text-[#6c7086]">0.0.0.0:8005</span>');
+      addOutput('<span class="text-[#cba6f7]">a7b8c9d0e1f2</span>   <span class="text-[#a6e3a1]">graphql-api       </span> <span class="text-[#89b4fa]">Up 2 years</span>   <span class="text-[#6c7086]">0.0.0.0:8006</span>');
       addOutput('</div>');
     }
 
@@ -1094,53 +1099,53 @@ import Layout from '../layouts/Layout.astro';
         { text: '"The best error message is the one that never shows up."', author: 'Thomas Fuchs' }
       ];
       const quote = quotes[Math.floor(Math.random() * quotes.length)];
-      addOutput(`<span class="text-[#bb9af7]">${quote.text}</span>`);
-      addOutput(`<span class="text-[#565f89]">  - ${quote.author}</span>`);
+      addOutput(`<span class="text-[#cba6f7]">${quote.text}</span>`);
+      addOutput(`<span class="text-[#6c7086]">  - ${quote.author}</span>`);
     }
 
     function showMatrix() {
-      addOutput('<span class="text-[#9ece6a]">Entering the Matrix...</span>');
+      addOutput('<span class="text-[#a6e3a1]">Entering the Matrix...</span>');
       setTimeout(() => {
-        addOutput('<span class="text-[#9ece6a]">01001000 01000101 01001100 01001100 01001111</span>');
+        addOutput('<span class="text-[#a6e3a1]">01001000 01000101 01001100 01001100 01001111</span>');
       }, 300);
       setTimeout(() => {
-        addOutput('<span class="text-[#7aa2f7]">Wake up, Neo... The portfolio has you.</span>');
+        addOutput('<span class="text-[#89b4fa]">Wake up, Neo... The portfolio has you.</span>');
       }, 600);
       setTimeout(() => {
-        addOutput('<span class="text-[#f7768e]">Follow the white rabbit 🐰</span>');
+        addOutput('<span class="text-[#f38ba8]">Follow the white rabbit 🐰</span>');
       }, 900);
     }
 
     function showHelp() {
       addOutput('<div class="space-y-1">');
-      addOutput('<span class="text-[#9ece6a] font-bold">Navigation Commands:</span>');
-      addOutput('<span class="text-[#7aa2f7]">  cd [category]</span> <span class="text-[#565f89]">- Change to category directory</span>');
-      addOutput('<span class="text-[#7aa2f7]">  cd ..</span> <span class="text-[#565f89]">- Go back to home</span>');
-      addOutput('<span class="text-[#7aa2f7]">  ls</span> <span class="text-[#565f89]">- List current directory</span>');
-      addOutput('<span class="text-[#7aa2f7]">  ls --all</span> <span class="text-[#565f89]">- List all projects</span>');
-      addOutput('<span class="text-[#7aa2f7]">  pwd</span> <span class="text-[#565f89]">- Print working directory</span>');
-      addOutput('<span class="text-[#7aa2f7]">  tree</span> <span class="text-[#565f89]">- Show project tree</span>');
+      addOutput('<span class="text-[#a6e3a1] font-bold">Navigation Commands:</span>');
+      addOutput('<span class="text-[#89b4fa]">  cd [category]</span> <span class="text-[#6c7086]">- Change to category directory</span>');
+      addOutput('<span class="text-[#89b4fa]">  cd ..</span> <span class="text-[#6c7086]">- Go back to home</span>');
+      addOutput('<span class="text-[#89b4fa]">  ls</span> <span class="text-[#6c7086]">- List current directory</span>');
+      addOutput('<span class="text-[#89b4fa]">  ls --all</span> <span class="text-[#6c7086]">- List all projects</span>');
+      addOutput('<span class="text-[#89b4fa]">  pwd</span> <span class="text-[#6c7086]">- Print working directory</span>');
+      addOutput('<span class="text-[#89b4fa]">  tree</span> <span class="text-[#6c7086]">- Show project tree</span>');
       addOutput('');
-      addOutput('<span class="text-[#9ece6a] font-bold">Project Commands:</span>');
-      addOutput('<span class="text-[#7aa2f7]">  cat [project]</span> <span class="text-[#565f89]">- View project details</span>');
-      addOutput('<span class="text-[#7aa2f7]">  grep [tech]</span> <span class="text-[#565f89]">- Filter by technology</span>');
+      addOutput('<span class="text-[#a6e3a1] font-bold">Project Commands:</span>');
+      addOutput('<span class="text-[#89b4fa]">  cat [project]</span> <span class="text-[#6c7086]">- View project details</span>');
+      addOutput('<span class="text-[#89b4fa]">  grep [tech]</span> <span class="text-[#6c7086]">- Filter by technology</span>');
       addOutput('');
-      addOutput('<span class="text-[#9ece6a] font-bold">Info Commands:</span>');
-      addOutput('<span class="text-[#7aa2f7]">  neofetch</span> <span class="text-[#565f89]">- Display system info (cool!)</span>');
-      addOutput('<span class="text-[#7aa2f7]">  contact</span> <span class="text-[#565f89]">- Show contact information</span>');
-      addOutput('<span class="text-[#7aa2f7]">  skills</span> <span class="text-[#565f89]">- Display technical skills</span>');
-      addOutput('<span class="text-[#7aa2f7]">  stats</span> <span class="text-[#565f89]">- Portfolio statistics</span>');
-      addOutput('<span class="text-[#7aa2f7]">  git log</span> <span class="text-[#565f89]">- Show commit history</span>');
-      addOutput('<span class="text-[#7aa2f7]">  docker ps</span> <span class="text-[#565f89]">- List running containers</span>');
+      addOutput('<span class="text-[#a6e3a1] font-bold">Info Commands:</span>');
+      addOutput('<span class="text-[#89b4fa]">  neofetch</span> <span class="text-[#6c7086]">- Display system info (cool!)</span>');
+      addOutput('<span class="text-[#89b4fa]">  contact</span> <span class="text-[#6c7086]">- Show contact information</span>');
+      addOutput('<span class="text-[#89b4fa]">  skills</span> <span class="text-[#6c7086]">- Display technical skills</span>');
+      addOutput('<span class="text-[#89b4fa]">  stats</span> <span class="text-[#6c7086]">- Portfolio statistics</span>');
+      addOutput('<span class="text-[#89b4fa]">  git log</span> <span class="text-[#6c7086]">- Show commit history</span>');
+      addOutput('<span class="text-[#89b4fa]">  docker ps</span> <span class="text-[#6c7086]">- List running containers</span>');
       addOutput('');
-      addOutput('<span class="text-[#9ece6a] font-bold">System Commands:</span>');
-      addOutput('<span class="text-[#7aa2f7]">  whoami</span> <span class="text-[#565f89]">- Display user info</span>');
-      addOutput('<span class="text-[#7aa2f7]">  quote</span> <span class="text-[#565f89]">- Random coding quote</span>');
-      addOutput('<span class="text-[#7aa2f7]">  matrix</span> <span class="text-[#565f89]">- Enter the Matrix 🐰</span>');
-      addOutput('<span class="text-[#7aa2f7]">  clear</span> <span class="text-[#565f89]">- Clear terminal</span>');
-      addOutput('<span class="text-[#7aa2f7]">  help</span> <span class="text-[#565f89]">- Show this help</span>');
+      addOutput('<span class="text-[#a6e3a1] font-bold">System Commands:</span>');
+      addOutput('<span class="text-[#89b4fa]">  whoami</span> <span class="text-[#6c7086]">- Display user info</span>');
+      addOutput('<span class="text-[#89b4fa]">  quote</span> <span class="text-[#6c7086]">- Random coding quote</span>');
+      addOutput('<span class="text-[#89b4fa]">  matrix</span> <span class="text-[#6c7086]">- Enter the Matrix 🐰</span>');
+      addOutput('<span class="text-[#89b4fa]">  clear</span> <span class="text-[#6c7086]">- Clear terminal</span>');
+      addOutput('<span class="text-[#89b4fa]">  help</span> <span class="text-[#6c7086]">- Show this help</span>');
       addOutput('');
-      addOutput('<span class="text-[#565f89]">💡 Tip: Use TAB for autocomplete, ↑↓ for history, Ctrl+L to clear</span>');
+      addOutput('<span class="text-[#6c7086]">💡 Tip: Use TAB for autocomplete, ↑↓ for history, Ctrl+L to clear</span>');
       addOutput('</div>');
     }
 
@@ -1179,8 +1184,8 @@ import Layout from '../layouts/Layout.astro';
         terminalInput.value = parts.join(' ');
       } else if (suggestions.length > 1) {
         // Multiple matches - show them
-        addOutput(`<span class="text-[#9ece6a]">$</span> <span class="text-[#c0caf5]">${input}</span>`);
-        addOutput(`<span class="text-[#565f89]">${suggestions.join('  ')}</span>`);
+        addOutput(`<span class="text-[#a6e3a1]">$</span> <span class="text-[#cdd6f4]">${input}</span>`);
+        addOutput(`<span class="text-[#6c7086]">${suggestions.join('  ')}</span>`);
       }
     }
 
@@ -1220,8 +1225,8 @@ import Layout from '../layouts/Layout.astro';
         // Ctrl+C to cancel current line
         e.preventDefault();
         terminalInput.value = '';
-        addOutput(`<span class="text-[#9ece6a]">$</span> <span class="text-[#c0caf5]">${terminalInput.value}</span>`);
-        addOutput('<span class="text-[#f7768e]">^C</span>');
+        addOutput(`<span class="text-[#a6e3a1]">$</span> <span class="text-[#cdd6f4]">${terminalInput.value}</span>`);
+        addOutput('<span class="text-[#f38ba8]">^C</span>');
       }
     });
 
@@ -1239,11 +1244,11 @@ import Layout from '../layouts/Layout.astro';
             'distributed': 'Distributed Systems',
             'api': 'APIs & Web Services'
           };
-          addOutput(`<span class="text-[#9ece6a]">$</span> <span class="text-[#c0caf5]">filter ${category}</span>`);
+          addOutput(`<span class="text-[#a6e3a1]">$</span> <span class="text-[#cdd6f4]">filter ${category}</span>`);
           const filtered = Object.entries(projects).filter(([_, p]) => p.category === category);
-          addOutput(`<span class="text-[#bb9af7]">${categoryNames[category]}:</span>`);
+          addOutput(`<span class="text-[#cba6f7]">${categoryNames[category]}:</span>`);
           filtered.forEach(([key, project]) => {
-            addOutput(`<span style="color: ${project.color}">▸ ${project.name}</span> <span class="text-[#565f89]">(${key})</span>`);
+            addOutput(`<span style="color: ${project.color}">▸ ${project.name}</span> <span class="text-[#6c7086]">(${key})</span>`);
           });
         }
       });
